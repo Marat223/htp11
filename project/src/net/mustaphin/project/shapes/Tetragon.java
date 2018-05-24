@@ -17,7 +17,7 @@ public class Tetragon {
 
     private double square;
     private double perimeter;
-    private List<Point> podoubles = new ArrayList<>();
+    private List<Point> points = new ArrayList<>();
 
     public double getSquare() {
 	return square;
@@ -36,11 +36,11 @@ public class Tetragon {
     }
 
     public void addPoint(Point podouble) {
-	podoubles.add(podouble);
+	points.add(podouble);
     }
 
     public Point getPoint(int index) {
-	return podoubles.get(index);
+	return points.get(index);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class Tetragon {
 	int hash = 5;
 	hash = 79 * hash + (int) (Double.doubleToLongBits(this.square) ^ (Double.doubleToLongBits(this.square) >>> 32));
 	hash = 79 * hash + (int) (Double.doubleToLongBits(this.perimeter) ^ (Double.doubleToLongBits(this.perimeter) >>> 32));
-	hash = 79 * hash + Objects.hashCode(this.podoubles);
+	hash = 79 * hash + Objects.hashCode(this.points);
 	return hash;
     }
 
@@ -70,7 +70,7 @@ public class Tetragon {
 	if (Double.doubleToLongBits(this.perimeter) != Double.doubleToLongBits(other.perimeter)) {
 	    return false;
 	}
-	if (!Objects.equals(this.podoubles, other.podoubles)) {
+	if (!Objects.equals(this.points, other.points)) {
 	    return false;
 	}
 	return true;
@@ -78,7 +78,7 @@ public class Tetragon {
 
     @Override
     public String toString() {
-	return "Tetragon{" + "square=" + square + ", perimeter=" + perimeter + ", podoubles=" + podoubles + '}';
+	return "Tetragon{" + "square=" + square + ", perimeter=" + perimeter + ", points=" + points + '}';
     }
 
 }

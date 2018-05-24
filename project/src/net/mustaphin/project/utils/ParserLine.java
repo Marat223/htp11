@@ -5,8 +5,8 @@
  */
 package net.mustaphin.project.utils;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
 
 /**
  *
@@ -15,10 +15,11 @@ import java.util.regex.Pattern;
 public class ParserLine {
 
     public List<String[]> parseLine(List<String> lines) {
-	Pattern pattern = Pattern.compile("");
-	for (String string : lines) {
-	    String line[] = string.split(" ");
+	List<String[]> parsed = new ArrayList<>();
+	for (String line : lines) {
+	    String[] detached = line.split(" ");
+	    parsed.add(detached);
 	}
-	return null;
+	return parsed;
     }
 }
