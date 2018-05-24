@@ -5,10 +5,20 @@
  */
 package net.mustaphin.project.utils;
 
+import java.util.List;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author marat
  */
 public class ParserLine {
-    
+
+    public List<String[]> parseLine(List<String> lines) {
+	Pattern pattern = Pattern.compile("");
+	for (String string : lines) {
+	    String line[] = string.split(" ");
+	}
+	return null;
+    }
 }

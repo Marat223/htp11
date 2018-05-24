@@ -18,15 +18,15 @@ import java.util.stream.Collectors;
  * @author marat
  */
 public class ReaderFile {
-    
-    public List readParameters(String location) {
+
+    public List<String> readParameters(String location) {
 	Path path = Paths.get(location);
 	List<String> coordinates = new ArrayList<>();
 	try {
 	    if (Files.exists(path)) {
 		coordinates = Files.lines(Paths.get(location)).collect(Collectors.toList());
 	    } else {
-		coordinates = Files.lines(Paths.get("D:/NetBeansProjects/htp11/project/src/net/mustaphin/project/files/file.txt")).collect(Collectors.toList());
+		coordinates = Files.lines(Paths.get("D:/NetBeansProjects/htp11/project/src/net/mustaphin/project/files/file.txt")).collect(Collectors.toList());//TODO redo to relative path
 	    }
 	} catch (IOException ex) {
 	    ex.printStackTrace();
