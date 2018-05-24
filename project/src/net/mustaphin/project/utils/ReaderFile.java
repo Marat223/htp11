@@ -8,7 +8,9 @@ package net.mustaphin.project.utils;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -16,11 +18,13 @@ import java.util.stream.Stream;
  */
 public class ReaderFile {
 
-    public void readParameters() {
-	try (Stream<String> stream = Files.lines(Paths.get("D:/NetBeansProjects/htp11/project/src/net/mustaphin/project/files/file.txt"))) {
-	    stream.forEach(System.out::println);
+    public List readParameters() {
+	List<String> coordinates = new ArrayList<>();
+	try {
+	    coordinates = Files.lines(Paths.get("D:/NetBeansProjects/htp11/project/src/net/mustaphin/project/files/file.txt")).collect(Collectors.toList());
 	} catch (IOException ex) {
 	    ex.printStackTrace();
 	}
+	return coordinates;
     }
 }
