@@ -19,6 +19,9 @@ public class Tetragon {
     private double perimeter;
     private List<Point> points = new ArrayList<>();
 
+    private Tetragon() {
+    }
+
     public double getSquare() {
 	return square;
     }

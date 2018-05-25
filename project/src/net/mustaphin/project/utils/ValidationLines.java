@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import net.mustaphin.project.constant.CoordinateRegular;
 
 /**
  *
@@ -18,7 +19,7 @@ public class ValidationLines {
 
     public List<String[]> validateDetached(List<String[]> detached) {
 	List<String[]> validated = new ArrayList<>();
-	Pattern pattern = Pattern.compile("[d]+[\\.]{1}[d]+");
+	Pattern pattern = Pattern.compile(CoordinateRegular.SAMPLE);
 	http://search.of.correct
 	for (String[] pack : detached) {
 	    if (pack.length != 8) {
