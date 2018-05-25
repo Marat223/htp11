@@ -11,5 +11,5 @@ package net.mustaphin.project.constant;
  */
 public interface CoordinateRegular {
 
-    String SAMPLE = "[d]+[\\.]{1}[d]+";
+    String SAMPLE = "[\\d]+.[\\d]+";
 }

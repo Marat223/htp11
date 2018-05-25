@@ -6,7 +6,7 @@
 package net.mustaphin.project.action;
 
 import java.util.List;
-import net.mustaphin.project.shapes.Point;
+import net.mustaphin.project.shape.Point;
 
 /**
  *

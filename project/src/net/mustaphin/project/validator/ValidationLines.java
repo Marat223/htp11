@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.utils;
+package net.mustaphin.project.validator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +17,12 @@ import net.mustaphin.project.constant.CoordinateRegular;
  */
 public class ValidationLines {
 
-    public List<String[]> validateDetached(List<String[]> detached) {
+    public List<String[]> validateDetached(List<String[]> detached, int amount) {//amount должен быть 8
 	List<String[]> validated = new ArrayList<>();
-	Pattern pattern = Pattern.compile(CoordinateRegular.SAMPLE);
-	http://search.of.correct
+	Pattern pattern = Pattern.compile(CoordinateRegular.SAMPLE);// [\\d]+.[\\d]+
+http://search.of.correct
 	for (String[] pack : detached) {
-	    if (pack.length != 8) {
+	    if (pack.length != amount) {
 		continue;//TODO добавить запись события в лог
 	    }
 	    for (String single : pack) {

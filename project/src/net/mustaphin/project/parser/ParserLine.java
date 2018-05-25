@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.utils;
+package net.mustaphin.project.parser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +14,10 @@ import java.util.List;
  */
 public class ParserLine {
 
-    public List<String[]> parseLine(List<String> lines) {
+    public List<String[]> parseLine(List<String> lines, String delimeter) {
 	List<String[]> parsed = new ArrayList<>();
 	for (String line : lines) {
-	    String[] detached = line.split(" ");
+	    String[] detached = line.trim().split(delimeter);
 	    parsed.add(detached);
 	}
 	return parsed;
