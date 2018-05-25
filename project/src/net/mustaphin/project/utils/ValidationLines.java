@@ -19,7 +19,7 @@ public class ValidationLines {
     public List<String[]> validateDetached(List<String[]> detached) {
 	List<String[]> validated = new ArrayList<>();
 	Pattern pattern = Pattern.compile("[d]+[\\.]{1}[d]+");
-http://search.of.correct
+	http://search.of.correct
 	for (String[] pack : detached) {
 	    if (pack.length != 8) {
 		continue;//TODO добавить запись события в лог
@@ -27,7 +27,7 @@ http://search.of.correct
 	    for (String single : pack) {
 		Matcher matcher = pattern.matcher(single);
 		if (!matcher.find()) {
-		    continue http;
+		    continue http;//TODO добавить запись события в лог
 		}
 	    }
 	    validated.add(pack);
