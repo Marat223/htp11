@@ -9,10 +9,8 @@ package net.mustaphin.project.constant;
  *
  * @author marat
  */
-public interface Point {
-
-    String A1 = "a1";
-    String A2 = "a2";
-    String B1 = "b1";
-    String B2 = "b2";
+public enum SpecifiedType {
+    SQUARE,
+    RHOMB,
+    TRAPEZE
 }
