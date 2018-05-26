@@ -17,7 +17,7 @@ import net.mustaphin.project.constant.CoordinateRegular;
  */
 public class ValidationLines {
 
-    public List<String[]> validateDetached(List<String[]> detached, int amount) {//amount должен быть 8
+    public List<String[]> validateDetached(List<String[]> detached, int amount) {//amount 8 если четырёхугольник
 	List<String[]> validated = new ArrayList<>();
 	Pattern pattern = Pattern.compile(CoordinateRegular.SAMPLE);// [\\d]+\\.[\\d]+
 http://search.of.correct

@@ -19,6 +19,15 @@ public class Point {
 	this.y = y;
     }
 
+    public Point(String[] coordinate) {
+	this.x = Double.parseDouble(coordinate[0]);
+	this.y = Double.parseDouble(coordinate[1]);
+    }
+
+    public double[] getCoordinate() {
+	return new double[]{x, y};
+    }
+
     public double getX() {
 	return x;
     }
