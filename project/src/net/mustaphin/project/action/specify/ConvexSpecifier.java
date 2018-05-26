@@ -25,7 +25,7 @@ public class ConvexSpecifier extends AbstractSpecifer {
     }
 
     private double findCorner(double side1, double side2) {
-	double corner = (side1 + side2) / (Math.sqrt((Math.pow(side1, 2)) + (Math.pow(side2, 2))));
+	
 	return 0;
     }
 
