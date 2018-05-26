@@ -15,27 +15,19 @@ import java.util.Objects;
  */
 public class Tetragon {
 
-    private double square;
-    private double perimeter;
+    private int id;
     private List<Point> points = new ArrayList<>();
 
-    private Tetragon() {
+    public int getId() {
+	return id;
     }
 
-    public double getSquare() {
-	return square;
+    public void setId(int id) {
+	this.id = id;
     }
 
-    public void setSquare(double square) {
-	this.square = square;
-    }
-
-    public double getPerimeter() {
-	return perimeter;
-    }
-
-    public void setPerimeter(double perimeter) {
-	this.perimeter = perimeter;
+    public Tetragon(List<Point> points) {
+	this.points = points;
     }
 
     public void addPoint(Point podouble) {
@@ -48,10 +40,9 @@ public class Tetragon {
 
     @Override
     public int hashCode() {
-	int hash = 5;
-	hash = 79 * hash + (int) (Double.doubleToLongBits(this.square) ^ (Double.doubleToLongBits(this.square) >>> 32));
-	hash = 79 * hash + (int) (Double.doubleToLongBits(this.perimeter) ^ (Double.doubleToLongBits(this.perimeter) >>> 32));
-	hash = 79 * hash + Objects.hashCode(this.points);
+	int hash = 3;
+	hash = 97 * hash + this.id;
+	hash = 97 * hash + Objects.hashCode(this.points);
 	return hash;
     }
 
@@ -67,10 +58,7 @@ public class Tetragon {
 	    return false;
 	}
 	final Tetragon other = (Tetragon) obj;
-	if (Double.doubleToLongBits(this.square) != Double.doubleToLongBits(other.square)) {
-	    return false;
-	}
-	if (Double.doubleToLongBits(this.perimeter) != Double.doubleToLongBits(other.perimeter)) {
+	if (this.id != other.id) {
 	    return false;
 	}
 	if (!Objects.equals(this.points, other.points)) {
@@ -81,7 +69,7 @@ public class Tetragon {
 
     @Override
     public String toString() {
-	return "Tetragon{" + "square=" + square + ", perimeter=" + perimeter + ", points=" + points + '}';
+	return "Tetragon{" + "id=" + id + ", points=" + points + '}';
     }
 
 }

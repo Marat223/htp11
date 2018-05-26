@@ -19,7 +19,7 @@ public class ValidationLines {
 
     public List<String[]> validateDetached(List<String[]> detached, int amount) {//amount должен быть 8
 	List<String[]> validated = new ArrayList<>();
-	Pattern pattern = Pattern.compile(CoordinateRegular.SAMPLE);// [\\d]+.[\\d]+
+	Pattern pattern = Pattern.compile(CoordinateRegular.SAMPLE);// [\\d]+\\.[\\d]+
 http://search.of.correct
 	for (String[] pack : detached) {
 	    if (pack.length != amount) {

@@ -26,7 +26,7 @@ public class ReaderFile {
 	    if (Files.exists(path)) {
 		coordinates = Files.lines(Paths.get(location)).collect(Collectors.toList());
 	    } else {
-		coordinates = Files.lines(Paths.get("D:/NetBeansProjects/htp11/project/src/net/mustaphin/project/files/file.txt")).collect(Collectors.toList());//TODO redo to relative path
+		coordinates = Files.lines(Paths.get("D:/NetBeansProjects/htp11/project/src/net/mustaphin/project/files/coordinate.txt")).collect(Collectors.toList());//TODO redo to relative path
 	    }
 	} catch (IOException ex) {
 	    ex.printStackTrace();
