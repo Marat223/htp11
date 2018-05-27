@@ -11,7 +11,7 @@ package net.mustaphin.project.action;
  */
 public class CalcPerimeter {
 
-    public static double calc(double[] side) {
+    public double calc(double[] side) {
 	double perimeter = 0;
 	for (double single : side) {
 	    perimeter += single;

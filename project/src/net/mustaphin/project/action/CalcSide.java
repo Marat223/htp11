@@ -5,19 +5,16 @@
  */
 package net.mustaphin.project.action;
 
+import net.mustaphin.project.shape.Point;
+
 /**
  *
  * @author marat
  */
 public class CalcSide {
 
-    public static double[] calc(double[] coordinate, int sideCount) {
-	double side[] = new double[sideCount];
-	for (int i = 0; i < sideCount; i++) {
-	    for (int k = 0; k < coordinate.length; k++) {
-		side[i] = Math.abs(coordinate[k] - coordinate[k += 2]);
-	    }
-	}
-	return side;
+    public double findLengthSide(Point a, Point b) {
+	return Math.sqrt((Math.pow((a.getX() - b.getX()), 2)) + (Math.pow((a.getY() - b.getY()), 2))); //теорема Пифагора
     }
+
 }
