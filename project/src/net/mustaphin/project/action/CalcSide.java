@@ -13,7 +13,7 @@ import net.mustaphin.project.shape.Point;
  */
 public class CalcSide {
 
-    public double findLengthSide(Point a, Point b) {
+    public double findLength(Point a, Point b) {
 	return Math.sqrt((Math.pow((a.getX() - b.getX()), 2)) + (Math.pow((a.getY() - b.getY()), 2))); //теорема Пифагора
     }
 
