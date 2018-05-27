@@ -15,10 +15,10 @@ import java.util.List;
  * @author marat
  */
 public class TrapezeSpecifer extends AbstractSpecifer {
-    
+
     public final List<Integer> SYMERTICAL = Arrays.asList(1, -1, -1, 1);
-    public final List<Integer> RECTANGULAR = Arrays.asList(0, 0, -1, 1);
-    
+    public final List<Integer> RECTANGULAR = Arrays.asList(0, -1, 1, 0);
+
     public boolean specifingTrapeze(int current[], List<Integer> type) { //первое значение - типы углов данной фигуры, второе значение 1 из 2 возможных видов
 	boolean result = false;
 	List<Integer> corners = new ArrayList<>(type);
@@ -38,7 +38,7 @@ http://start.of.searh
 	}
 	return result;
     }
-    
+
     public int cornerType(double cos) { //косинус больше нуля -угол острый
 	if (0 < cos) {
 	    return 1;
