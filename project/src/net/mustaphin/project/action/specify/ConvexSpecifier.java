@@ -5,6 +5,7 @@
  */
 package net.mustaphin.project.action.specify;
 
+import java.util.ArrayList;
 import java.util.List;
 import net.mustaphin.project.shape.Point;
 
@@ -12,21 +13,30 @@ import net.mustaphin.project.shape.Point;
  *
  * @author marat
  */
-public class ConvexSpecifier extends AbstractSpecifer {
+public class ConvexSpecifier {
 
-    @Override
-    public boolean check(List<Point> points) {
+    private List<Double> angleCos = new ArrayList<>();
 
+    public double getAngleCos(int position) {
+	return angleCos.get(position);
+    }
+
+    public void setAngleCos(double cos) {
+	angleCos.add(cos);
+    }
+
+    public boolean check() {
+	
 	return false;
     }
 
-    private double findLengthSide(Point a, Point b) {
+    public double findLengthSide(Point a, Point b) {
 	return Math.sqrt((Math.pow((a.getX() - b.getX()), 2)) + (Math.pow((a.getY() - b.getY()), 2))); //теорема Пифагора
     }
 
-    private double findCorner(double side1, double side2) {
-	
-	return 0;
+    public double correlationAngle(double a, double b, double c) { //ервым значением должна быть противолежащая углу сторона
+	double angle = (Math.pow(b, 2) + Math.pow(c, 2) - Math.pow(a, 2)) / 2 * b * c; //теорема косинусов
+	return Math.cos(angle);
     }
 
 }
