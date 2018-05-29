@@ -9,6 +9,9 @@ package net.mustaphin.project.action.area;
  *
  * @author marat
  */
-public class AbstractArea {
-    
+public class TrapezeArea {
+
+    public double calc() {
+	return 0; //TODO
+    }
 }

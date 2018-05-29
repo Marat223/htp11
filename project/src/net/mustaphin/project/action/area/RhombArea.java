@@ -3,18 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action;
+package net.mustaphin.project.action.area;
 
+import net.mustaphin.project.action.CalcSide;
 import net.mustaphin.project.shape.Point;
 
 /**
  *
  * @author marat
  */
-public class CalcSide {
+public class RhombArea {
 
-    public static double findLength(Point a, Point b) {
-	return Math.sqrt((Math.pow((a.getX() - b.getX()), 2)) + (Math.pow((a.getY() - b.getY()), 2))); //теорема Пифагора
+    public double calc(Point[] point) {
+	return CalcSide.findLength(point[0], point[2]) * CalcSide.findLength(point[1], point[3]) / 2;
     }
 
 }
