@@ -5,7 +5,6 @@
  */
 package net.mustaphin.project.action.area;
 
-import net.mustaphin.project.action.CalcSide;
 import net.mustaphin.project.shape.Point;
 
 /**
@@ -15,7 +14,7 @@ import net.mustaphin.project.shape.Point;
 public class RhombArea {
 
     public double calc(Point[] point) {
-	return CalcSide.findLength(point[0], point[2]) * CalcSide.findLength(point[1], point[3]) / 2;
+	return Math.hypot(point[0].getX() - point[2].getX(), point[0].getY() - point[2].getY()) * Math.hypot(point[1].getX() - point[3].getX(), point[3].getY() - point[3].getY()) / 2;
     }
 
 }
