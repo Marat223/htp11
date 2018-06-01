@@ -5,13 +5,15 @@
  */
 package net.mustaphin.project.action.area;
 
+import net.mustaphin.project.shape.Point;
+
 /**
  *
  * @author marat
  */
 public class TrapezeArea {
 
-    public double calc() {
-	return 0; //TODO
+    public double calc(double side[], Point point[]) {
+	return (side[0] + side[2]);
     }
 }
