@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.threePointsOnOneLine;
+package net.mustaphin.project.action.naturalTetragon;
 
 import net.mustaphin.project.shape.Point;
 
@@ -13,7 +13,7 @@ import net.mustaphin.project.shape.Point;
  */
 public class NaturalTetragon {
 
-    public boolean checkBetween(Point a, Point b, Point c) { //b - точка которая может лежать на отрезке между другими точками
+    public boolean checkNatural(Point a, Point b, Point c) { //b - точка которая может лежать на отрезке между другими точками
 	return (b.getX() - a.getX()) / (c.getX() - a.getX()) == (b.getY() - a.getY()) / (c.getY() - a.getY());
     }
 }
