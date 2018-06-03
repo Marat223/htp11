@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.specifyType.specifer;
+package net.mustaphin.project.action.specifier;
 
 /**
  *
  * @author marat
  */
-public abstract class AbstractSpecifer {
+public abstract class Specifer {
 
     //передаваемые значения - стороны треугольника образованные от двух сторон прямоугольника и стороны противолежащей искомому углу
     public double findCos(double a, double b, double c) { //первым значением должна быть противолежащая искомому углу сторона

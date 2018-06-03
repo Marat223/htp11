@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.specifyType.specifer;
+package net.mustaphin.project.action.specifier;
 
 /**
  *
  * @author marat
  */
-public class ConvexSpecifer extends AbstractSpecifer {
+public class ConvexSpecifer extends Specifer {
 
     public boolean isConvex(double sumCos) { //передаваемое значение - сумма всех косинусов
 	boolean convex = false;

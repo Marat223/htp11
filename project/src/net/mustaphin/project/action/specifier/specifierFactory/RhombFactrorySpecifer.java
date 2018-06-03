@@ -5,15 +5,18 @@
  */
 package net.mustaphin.project.action.specifyType;
 
+import net.mustaphin.project.action.specifier.Specifer;
+import net.mustaphin.project.action.specifier.SquareSpecifer;
+
 /**
  *
  * @author marat
  */
-public class SquareFactrorySpecifier extends AbstractFactorySpecifier {
+public class RhombFactrorySpecifer extends AbstractFactorySpecifier {
 
     @Override
-    public boolean specify() {
-	throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Specifer specify() {
+	return new SquareSpecifer();
     }
 
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.specifyType.specifer;
+package net.mustaphin.project.action.specifier;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author marat
  */
-public class TrapezeSpecifer extends AbstractSpecifer {
+public class TrapezeSpecifer extends Specifer {
 
     public final List<Integer> SYMERTICAL = Arrays.asList(1, -1, -1, 1);
     public final List<Integer> RECTANGULAR = Arrays.asList(0, -1, 1, 0);

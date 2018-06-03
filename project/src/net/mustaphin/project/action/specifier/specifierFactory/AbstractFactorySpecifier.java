@@ -5,11 +5,13 @@
  */
 package net.mustaphin.project.action.specifyType;
 
+import net.mustaphin.project.action.specifier.Specifer;
+
 /**
  *
  * @author marat
  */
 public abstract class AbstractFactorySpecifier {
 
-    public abstract boolean specify();
+    public abstract Specifer specify();
 }

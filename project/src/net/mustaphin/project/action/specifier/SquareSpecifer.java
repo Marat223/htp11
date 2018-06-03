@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.specifyType.specifer;
+package net.mustaphin.project.action.specifier;
 
 /**
  *
  * @author marat
  */
-public class SquareSpecifer extends AbstractSpecifer {
+public class SquareSpecifer extends Specifer {
 
     public boolean areAllSpecificationsSame(double spec[]) { //можно проверять на равернство стороны или косинусы углов
 	for (int i = 0; i < spec.length - 1; i++) {
