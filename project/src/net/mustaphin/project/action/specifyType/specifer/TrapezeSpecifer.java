@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.specifyType;
+package net.mustaphin.project.action.specifyType.specifer;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.parser;
+package net.mustaphin.project.readData.parser;
 
 import java.util.ArrayList;
 import java.util.List;

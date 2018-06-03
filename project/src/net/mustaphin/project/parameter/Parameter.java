@@ -5,6 +5,8 @@
  */
 package net.mustaphin.project.parameter;
 
+import net.mustaphin.project.constant.ShapeType;
+
 /**
  *
  * @author marat
@@ -15,6 +17,15 @@ public class Parameter {
     private double perimeter;
     private boolean isTetragon;
     private boolean isConvex;
+    private ShapeType type;
+
+    public ShapeType getType() {
+	return type;
+    }
+
+    public void setType(ShapeType type) {
+	this.type = type;
+    }
 
     public double getArea() {
 	return area;
