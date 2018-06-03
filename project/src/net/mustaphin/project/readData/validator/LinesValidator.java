@@ -15,7 +15,7 @@ import net.mustaphin.project.constant.CoordinateRegular;
  *
  * @author marat
  */
-public class ValidationLines {
+public class LinesValidator {
 
     public List<String[]> validateDetached(List<String[]> detached, int amount) {//amount 8 если четырёхугольник
 	List<String[]> validated = new ArrayList<>();
