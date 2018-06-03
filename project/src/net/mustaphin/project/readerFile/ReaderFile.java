@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.reader;
+package net.mustaphin.project.readerFile;
 
 import java.io.IOException;
 import java.nio.file.Files;
