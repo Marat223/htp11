@@ -9,7 +9,11 @@ package net.mustaphin.project.action.specifyType;
  *
  * @author marat
  */
-public abstract class AbstractFactorySpecifier {
+public class SquareFactrorySpecifier extends AbstractFactorySpecifier {
 
-    public abstract boolean specify();
+    @Override
+    public boolean specify() {
+	throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
