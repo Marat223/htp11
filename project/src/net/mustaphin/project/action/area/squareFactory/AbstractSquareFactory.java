@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.area;
+package net.mustaphin.project.action.area.squareFactory;
 
 /**
  *
  * @author marat
  */
-public abstract class AbstractAreaFactory {
+public abstract class AbstractSquareFactory {
 
     public abstract double find();
 }
