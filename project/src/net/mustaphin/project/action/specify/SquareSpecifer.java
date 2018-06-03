@@ -11,7 +11,7 @@ package net.mustaphin.project.action.specify;
  */
 public class SquareSpecifer extends AbstractSpecifer {
 
-    public boolean areAllSpecificationsSame(double spec[]) {
+    public boolean areAllSpecificationsSame(double spec[]) { //можно проверять на равернство стороны или косинусы углов
 	for (int i = 0; i < spec.length - 1; i++) {
 	    for (int k = i; k > 0; k--) {
 		if (spec[k] != spec[k - 1]) {

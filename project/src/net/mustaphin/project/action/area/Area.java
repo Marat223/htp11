@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action;
+package net.mustaphin.project.action.area;
 
 import net.mustaphin.project.shape.Point;
 
@@ -11,9 +11,9 @@ import net.mustaphin.project.shape.Point;
  *
  * @author marat
  */
-public class CalcSide {
+public abstract class Area {
 
-    public double[] calc(Point point[]) {
+    public double[] calcSides(Point point[]) {
 	double side[] = new double[point.length];
 	for (int i = 0; i < side.length; i++) {
 	    int k = i + 1;
@@ -24,5 +24,4 @@ public class CalcSide {
 	}
 	return side;
     }
-
 }

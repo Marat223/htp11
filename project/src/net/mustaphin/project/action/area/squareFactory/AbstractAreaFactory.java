@@ -5,11 +5,13 @@
  */
 package net.mustaphin.project.action.area.squareFactory;
 
+import net.mustaphin.project.action.area.Area;
+
 /**
  *
  * @author marat
  */
-public abstract class AbstractSquareFactory {
+public abstract class AbstractAreaFactory {
 
-    public abstract double find();
+    public abstract Area find();
 }

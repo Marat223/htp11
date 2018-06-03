@@ -6,18 +6,21 @@
 package net.mustaphin.project.action.area;
 
 import static java.lang.Math.*;
+import net.mustaphin.project.shape.Point;
 
 /**
  *
  * @author marat
  */
-public class TrapezeArea {
+public class TrapezeArea extends Area {
 
-    public double calc(double side[]) {
+    public double calc(Point point[]) {
+	double side[] = calcSides(point);
 	double a = side[0];
 	double b = side[1];
 	double c = side[2];
 	double d = side[3];
 	return ((a + b) / 2) * sqrt(pow(c, 2) - pow((pow((b - a), 2) + pow(c, 2) - pow(d, 2)) / 2 * (b - a), 2));
     }
+
 }
