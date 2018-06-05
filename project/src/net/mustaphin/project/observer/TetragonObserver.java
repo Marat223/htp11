@@ -33,7 +33,7 @@ public class TetragonObserver implements Observer {
 
     @Override
     public void handleEvent(Tetragon tetragon) {
-	throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
 }

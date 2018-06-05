@@ -26,6 +26,14 @@ public class Tetragon {
 
     public void addObserver(TetragonObserver observer) {
 	this.observer = observer;
+	observer.addObservable(this);
+    }
+
+    public void removeObserver() {
+	if (null != observer) {
+	    observer.removeObservable(this);
+	    observer = null;
+	}
     }
 
     public void notifyObserver() {
