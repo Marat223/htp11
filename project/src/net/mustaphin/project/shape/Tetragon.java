@@ -55,6 +55,10 @@ public class Tetragon {
 	notifyObserver();
     }
 
+    public List<Point> getPoints() {
+	return points;
+    }
+
     public Point getPoint(int index) {
 	return points.get(index);
     }
