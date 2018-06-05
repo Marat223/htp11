@@ -8,6 +8,7 @@ package net.mustaphin.project.shape;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import net.mustaphin.project.observer.TetragonObserver;
 
 /**
  *
@@ -17,6 +18,21 @@ public class Tetragon {
 
     private int id;
     private List<Point> points = new ArrayList<>();
+    private TetragonObserver observer;
+
+    public Tetragon(List<Point> points) {
+	this.points = points;
+    }
+
+    public void addObserver(TetragonObserver observer) {
+	this.observer = observer;
+    }
+
+    public void notifyObserver() {
+	if (null != observer) {
+	    observer.handleEvent(this);
+	}
+    }
 
     public int getId() {
 	return id;
@@ -26,12 +42,9 @@ public class Tetragon {
 	this.id = id;
     }
 
-    public Tetragon(List<Point> points) {
+    public void setPoints(List<Point> points) {
 	this.points = points;
-    }
-
-    public void addPoint(Point podouble) {
-	points.add(podouble);
+	notifyObserver();
     }
 
     public Point getPoint(int index) {
@@ -41,8 +54,9 @@ public class Tetragon {
     @Override
     public int hashCode() {
 	int hash = 3;
-	hash = 97 * hash + this.id;
-	hash = 97 * hash + Objects.hashCode(this.points);
+	hash = 79 * hash + this.id;
+	hash = 79 * hash + Objects.hashCode(this.points);
+	hash = 79 * hash + Objects.hashCode(this.observer);
 	return hash;
     }
 
@@ -64,12 +78,15 @@ public class Tetragon {
 	if (!Objects.equals(this.points, other.points)) {
 	    return false;
 	}
+	if (!Objects.equals(this.observer, other.observer)) {
+	    return false;
+	}
 	return true;
     }
 
     @Override
     public String toString() {
-	return "Tetragon{" + "id=" + id + ", points=" + points + '}';
+	return "Tetragon{" + "id=" + id + ", points=" + points + ", observer=" + observer + '}';
     }
 
 }
