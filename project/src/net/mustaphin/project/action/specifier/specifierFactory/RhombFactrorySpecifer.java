@@ -5,7 +5,7 @@
  */
 package net.mustaphin.project.action.specifier.specifierFactory;
 
-import net.mustaphin.project.action.specifier.Specifer;
+import net.mustaphin.project.action.specifier.Specifier;
 import net.mustaphin.project.action.specifier.SquareSpecifer;
 
 /**
@@ -15,7 +15,7 @@ import net.mustaphin.project.action.specifier.SquareSpecifer;
 public class RhombFactrorySpecifer extends AbstractFactorySpecifier {
 
     @Override
-    public Specifer specify() {
+    public Specifier getSpecifier() {
 	return new SquareSpecifer();
     }
 

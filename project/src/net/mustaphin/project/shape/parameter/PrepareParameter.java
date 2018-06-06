@@ -5,6 +5,9 @@
  */
 package net.mustaphin.project.shape.parameter;
 
+import net.mustaphin.project.action.specifier.Specifier;
+import net.mustaphin.project.action.specifier.specifierFactory.AbstractFactorySpecifier;
+
 /**
  *
  * @author marat
@@ -12,12 +15,12 @@ package net.mustaphin.project.shape.parameter;
 public class PrepareParameter {
 
     private double[] side;
+    private double[] cos;
 
-    private double[] cosA;
-
-    public PrepareParameter(double[] side, double[] cosA) {
-	this.side = side;
-	this.cosA = cosA;
+    public boolean checkSpecification(AbstractFactorySpecifier factorySpecifier) {
+	Specifier specifier = factorySpecifier.getSpecifier();
+	
+	return false;
     }
 
     public double[] getSide() {
@@ -28,12 +31,12 @@ public class PrepareParameter {
 	this.side = side;
     }
 
-    public double[] getCosA() {
-	return cosA;
+    public double[] getCos() {
+	return cos;
     }
 
-    public void setCosA(double[] cosA) {
-	this.cosA = cosA;
+    public void setCos(double[] cos) {
+	this.cos = cos;
     }
 
 }

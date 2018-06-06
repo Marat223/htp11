@@ -38,8 +38,8 @@ public class TetragonObserver implements Observer {
     @Override
     public void handleEvent(Tetragon tetragon) {
 	GeometricalParameter parameter = new GeometricalParameter();
-	PrepareParameter prepare ;
-	List<Point> points = tetragon.getPoints();
+	PrepareParameter prepare;
+	List<Point> points = tetragon.getPoints(); //TODO
     }
 
 }

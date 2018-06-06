@@ -5,7 +5,7 @@
  */
 package net.mustaphin.project.action.specifier.specifierFactory;
 
-import net.mustaphin.project.action.specifier.Specifer;
+import net.mustaphin.project.action.specifier.Specifier;
 
 /**
  *
@@ -13,5 +13,5 @@ import net.mustaphin.project.action.specifier.Specifer;
  */
 public abstract class AbstractFactorySpecifier {
 
-    public abstract Specifer specify();
+    public abstract Specifier getSpecifier();
 }

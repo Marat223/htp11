@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author marat
  */
-public class TrapezeSpecifer extends Specifer {
+public class TrapezeSpecifer extends Specifier {
 
     public final List<Integer> SYMERTICAL = Arrays.asList(1, -1, -1, 1);
     public final List<Integer> RECTANGULAR = Arrays.asList(0, -1, 1, 0);

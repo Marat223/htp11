@@ -9,7 +9,7 @@ package net.mustaphin.project.action.specifier;
  *
  * @author marat
  */
-public class SquareSpecifer extends Specifer {
+public class SquareSpecifer extends Specifier {
 
     public boolean areAllSpecificationsSame(double spec[]) { //можно проверять на равернство стороны или косинусы углов
 	for (int i = 0; i < spec.length - 1; i++) {

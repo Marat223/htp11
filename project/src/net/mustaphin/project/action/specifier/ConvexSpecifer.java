@@ -9,7 +9,7 @@ package net.mustaphin.project.action.specifier;
  *
  * @author marat
  */
-public class ConvexSpecifer extends Specifer {
+public class ConvexSpecifer extends Specifier {
 
     public boolean isConvex(double sumCos) { //передаваемое значение - сумма всех косинусов
 	boolean convex = false;

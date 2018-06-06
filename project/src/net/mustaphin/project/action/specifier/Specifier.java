@@ -9,7 +9,7 @@ package net.mustaphin.project.action.specifier;
  *
  * @author marat
  */
-public abstract class Specifer {
+public abstract class Specifier {
 
     //передаваемые значения - стороны треугольника образованные от двух сторон прямоугольника и стороны противолежащей искомому углу
     public static double findCos(double a, double b, double c) { //первым значением должна быть противолежащая искомому углу сторона

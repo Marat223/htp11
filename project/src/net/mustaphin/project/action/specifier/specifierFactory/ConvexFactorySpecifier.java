@@ -6,7 +6,7 @@
 package net.mustaphin.project.action.specifier.specifierFactory;
 
 import net.mustaphin.project.action.specifier.ConvexSpecifer;
-import net.mustaphin.project.action.specifier.Specifer;
+import net.mustaphin.project.action.specifier.Specifier;
 
 /**
  *
@@ -15,7 +15,7 @@ import net.mustaphin.project.action.specifier.Specifer;
 public class ConvexFactorySpecifier extends AbstractFactorySpecifier {
 
     @Override
-    public Specifer specify() {
+    public Specifier getSpecifier() {
 	return new ConvexSpecifer();
     }
 
