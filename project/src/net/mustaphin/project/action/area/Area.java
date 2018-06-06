@@ -13,7 +13,7 @@ import net.mustaphin.project.shape.Point;
  */
 public abstract class Area {
 
-    public static double[] calcSides(Point point[]) {
+    public static double[] findSides(Point point[]) {
 	double side[] = new double[point.length];
 	for (int i = 0; i < side.length; i++) {
 	    int k = i + 1;

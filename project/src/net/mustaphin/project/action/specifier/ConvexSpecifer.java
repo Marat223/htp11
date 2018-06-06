@@ -11,7 +11,11 @@ package net.mustaphin.project.action.specifier;
  */
 public class ConvexSpecifer extends Specifier {
 
-    public boolean isConvex(double sumCos) { //передаваемое значение - сумма всех косинусов
+    public boolean spcify(double cos[]) { //передаваемое значение - сумма всех косинусов
+	double sumCos = 0;
+	for (double co : cos) {
+	    sumCos += co;
+	}
 	boolean convex = false;
 	if (1 == sumCos) {
 	    convex = true;

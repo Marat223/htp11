@@ -5,7 +5,6 @@
  */
 package net.mustaphin.project.action.specifier;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -16,51 +15,46 @@ import java.util.List;
  */
 public class TrapezeSpecifer extends Specifier {
 
-    public final List<Integer> SYMERTICAL = Arrays.asList(1, -1, -1, 1);
-    public final List<Integer> RECTANGULAR = Arrays.asList(0, -1, 1, 0);
+    public boolean spcify(double cos[]) { //первое значение - типы углов данной фигуры, второе значение 1 из 2 возможных видов
+	int cornerType[] = cornerType(cos);
+	return checkType(cornerType);
+    }
 
-    public boolean specifingTrapeze(int current[], List<Integer> type) { //первое значение - типы углов данной фигуры, второе значение 1 из 2 возможных видов
+    private boolean checkType(int cornerType[]) {
 	boolean result = false;
-	List<Integer> corners = new ArrayList<>(type);
-	Iterator<Integer> corner = corners.iterator();
+	int type[][] = {{1, -1, -1, 1}, {0, -1, 1, 0}};
+	for (int i = 0; i < type.length; i++) {
+	    List<Integer> current = Arrays.asList(type[i][0], type[i][1], type[i][2], type[i][3]);
+	    Iterator<Integer> corner = current.iterator();
 http://start.of.searh
-	for (int single : current) {
-	    while (corner.hasNext()) {
-		Integer next = corner.next();
-		if (next == single) {
-		    corner.remove();
-		    continue http;
+	    for (int angle : cornerType) {
+		while (corner.hasNext()) {
+		    Integer next = corner.next();
+		    if (next == angle) {
+			corner.remove();
+			continue http;
+		    }
 		}
 	    }
-	}
-	if (corners.isEmpty()) {
-	    result = true;
+	    if (current.isEmpty()) {
+		result = true;
+		break;
+	    }
 	}
 	return result;
     }
 
-    public int cornerType(double cos) { //косинус больше нуля -угол острый
-	if (0 < cos) {
-	    return 1;
-	} else if (0 > cos) {
-	    return -1;
+    public int[] cornerType(double cos[]) { //косинус больше нуля -угол острый
+	int type[] = new int[4];
+	for (int i = 0; i < 4; i++) {
+	    if (0 < cos[i]) {
+		type[i] = 1;
+	    } else if (0 > cos[i]) {
+		type[i] = -1;
+	    }
+	    type[i] = 0;
 	}
-	return 0;
+	return type;
     }
 
-//    public enum CornerType {
-//
-//	SYMERTICAL {
-//	    public int[] getCorners() {
-//		int corner[] = {1, -1, -1, 1};
-//		return corner;
-//	    }
-//	},
-//	RECTANGULAR {
-//	    public int[] getCorners() {
-//		int corner[] = {0, 0, -1, 1};
-//		return corner;
-//	    }
-//	}
-//    }
 }

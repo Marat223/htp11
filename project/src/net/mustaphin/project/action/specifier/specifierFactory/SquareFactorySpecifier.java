@@ -15,7 +15,7 @@ import net.mustaphin.project.action.specifier.SquareSpecifer;
 public class SquareFactorySpecifier extends AbstractFactorySpecifier {
 
     @Override
-    public Specifier getSpecifier() {
+    public Specifier createSpecifier() {
 	return new SquareSpecifer();
     }
 

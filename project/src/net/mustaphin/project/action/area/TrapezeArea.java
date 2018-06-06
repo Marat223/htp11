@@ -15,7 +15,7 @@ import net.mustaphin.project.shape.Point;
 public class TrapezeArea extends Area {
 
     public double calc(Point point[]) {
-	double side[] = calcSides(point);
+	double side[] = findSides(point);
 	double a = side[0];
 	double b = side[1];
 	double c = side[2];

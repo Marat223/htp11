@@ -15,7 +15,7 @@ import net.mustaphin.project.action.specifier.TrapezeSpecifer;
 public class TrapezeFactrorySpecifier extends AbstractFactorySpecifier {
 
     @Override
-    public Specifier getSpecifier() {
+    public Specifier createSpecifier() {
 	return new TrapezeSpecifer();
     }
 

@@ -13,5 +13,5 @@ import net.mustaphin.project.action.specifier.Specifier;
  */
 public abstract class AbstractFactorySpecifier {
 
-    public abstract Specifier getSpecifier();
+    public abstract Specifier createSpecifier();
 }

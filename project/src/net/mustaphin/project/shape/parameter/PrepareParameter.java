@@ -18,7 +18,7 @@ public class PrepareParameter {
     private double[] cos;
 
     public boolean checkSpecification(AbstractFactorySpecifier factorySpecifier) {
-	Specifier specifier = factorySpecifier.getSpecifier();
+	Specifier specifier = factorySpecifier.createSpecifier();
 	
 	return false;
     }
