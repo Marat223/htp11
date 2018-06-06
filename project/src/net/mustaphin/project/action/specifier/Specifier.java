@@ -13,9 +13,4 @@ public abstract class Specifier {
 
     public abstract boolean spcify(double specs[]);
 
-    //передаваемые значения - стороны треугольника образованные от двух сторон прямоугольника и стороны противолежащей искомому углу
-    public static double findCos(double a, double b, double c) { //первым значением должна быть противолежащая искомому углу сторона
-	double angle = (Math.pow(b, 2) + Math.pow(c, 2) - Math.pow(a, 2)) / 2 * b * c; //теорема косинусов
-	return angle;
-    }
 }
