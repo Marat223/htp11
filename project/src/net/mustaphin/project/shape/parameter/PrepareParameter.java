@@ -20,7 +20,7 @@ public class PrepareParameter {
 
     public boolean checkSpecification(AbstractFactorySpecifier factorySpecifier, double specs[]) {
 	Specifier specifier = factorySpecifier.createSpecifier();
-	return specifier.spcify(specs);
+	return specifier.spcify(specs); //возможна исключительная ситуация
     }
 
     public static double[] findSides(Point point[]) {
@@ -37,8 +37,7 @@ public class PrepareParameter {
 
     //передаваемые значения - стороны треугольника образованные от двух сторон прямоугольника и стороны противолежащей искомому углу
     public double findCos(double a, double b, double c) { //первым значением должна быть противолежащая искомому углу сторона
-	double angle = (Math.pow(b, 2) + Math.pow(c, 2) - Math.pow(a, 2)) / 2 * b * c; //теорема косинусов
-	return angle;
+	return (Math.pow(b, 2) + Math.pow(c, 2) - Math.pow(a, 2)) / 2 * b * c; //теорема косинусов;
     }
 
     public double[] getSide() {
