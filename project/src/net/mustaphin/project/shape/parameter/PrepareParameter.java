@@ -17,8 +17,12 @@ import net.mustaphin.project.shape.Point;
  */
 public class PrepareParameter {
 
-    private double[] side;
-    private double[] cos;
+    private double[] side = new double[4];
+    private double[] cos = new double[4];
+
+    public PrepareParameter(Point point[]) {
+	side = findSides(point);
+    }
 
     public boolean checkSpecification(AbstractFactorySpecifier factorySpecifier, double specs[]) {
 	Specifier specifier = factorySpecifier.createSpecifier();

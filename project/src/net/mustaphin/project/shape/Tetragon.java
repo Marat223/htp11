@@ -5,8 +5,7 @@
  */
 package net.mustaphin.project.shape;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 import java.util.Objects;
 import net.mustaphin.project.observer.TetragonObserver;
 
@@ -17,11 +16,12 @@ import net.mustaphin.project.observer.TetragonObserver;
 public class Tetragon {
 
     private int id;
-    private List<Point> points = new ArrayList<>();
+    private Point point[] = new Point[4];
     private TetragonObserver observer;
 
-    public Tetragon(List<Point> points) {
-	this.points = points;
+    public Tetragon(Point point[]) {
+	this.point = point;
+	notifyObserver();
     }
 
     public void addObserver(TetragonObserver observer) {
@@ -50,25 +50,24 @@ public class Tetragon {
 	this.id = id;
     }
 
-    public void setPoints(List<Point> points) {
-	this.points = points;
-	notifyObserver();
+    public Point[] getPoint() {
+	return point;
     }
 
-    public List<Point> getPoints() {
-	return points;
+    public Point getPoint(int position) {
+	return this.point[position];
     }
 
-    public Point getPoint(int index) {
-	return points.get(index);
+    public void setPoint(Point[] point) {
+	this.point = point;
     }
 
     @Override
     public int hashCode() {
-	int hash = 3;
-	hash = 79 * hash + this.id;
-	hash = 79 * hash + Objects.hashCode(this.points);
-	hash = 79 * hash + Objects.hashCode(this.observer);
+	int hash = 7;
+	hash = 97 * hash + this.id;
+	hash = 97 * hash + Arrays.deepHashCode(this.point);
+	hash = 97 * hash + Objects.hashCode(this.observer);
 	return hash;
     }
 
@@ -87,7 +86,7 @@ public class Tetragon {
 	if (this.id != other.id) {
 	    return false;
 	}
-	if (!Objects.equals(this.points, other.points)) {
+	if (!Arrays.deepEquals(this.point, other.point)) {
 	    return false;
 	}
 	if (!Objects.equals(this.observer, other.observer)) {
@@ -98,7 +97,7 @@ public class Tetragon {
 
     @Override
     public String toString() {
-	return "Tetragon{" + "id=" + id + ", points=" + points + ", observer=" + observer + '}';
+	return "Tetragon{" + "id=" + id + ", point=" + point + ", observer=" + observer + '}';
     }
 
 }

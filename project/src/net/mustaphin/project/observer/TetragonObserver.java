@@ -7,7 +7,6 @@ package net.mustaphin.project.observer;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import net.mustaphin.project.shape.Point;
 import net.mustaphin.project.shape.Tetragon;
 import net.mustaphin.project.shape.parameter.GeometricalParameter;
@@ -38,8 +37,10 @@ public class TetragonObserver implements Observer {
     @Override
     public void handleEvent(Tetragon tetragon) {
 	GeometricalParameter parameter = new GeometricalParameter();
-	PrepareParameter prepare;
-	List<Point> points = tetragon.getPoints(); //TODO
+	Point point[] = tetragon.getPoint();
+	PrepareParameter prepare = new PrepareParameter(point);
+	double side[] = prepare.getSide();
+
     }
 
 }
