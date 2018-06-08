@@ -40,7 +40,7 @@ public class TetragonObserver implements Observer {
 	Point point[] = tetragon.getPoint();
 	PrepareParameter prepare = new PrepareParameter(point);
 	double side[] = prepare.getSide();
-
+	//TODO
     }
 
 }

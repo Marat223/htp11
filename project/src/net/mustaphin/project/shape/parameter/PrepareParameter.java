@@ -51,6 +51,11 @@ public class PrepareParameter {
 	return (Math.pow(b, 2) + Math.pow(c, 2) - Math.pow(a, 2)) / 2 * b * c; //теорема косинусов;
     }
 
+    public void findCos() {
+	double cos[] = new double[4];
+	
+    }
+
     public double[] getSide() {
 	return side;
     }
