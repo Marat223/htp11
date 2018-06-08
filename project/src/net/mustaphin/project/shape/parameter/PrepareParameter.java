@@ -21,7 +21,8 @@ public class PrepareParameter {
     private double[] cos = new double[4];
 
     public PrepareParameter(Point point[]) {
-	side = findSides(point);
+	this.side = findSides(point);
+	this.cos = findCos(side);
     }
 
     public boolean checkSpecification(AbstractFactorySpecifier factorySpecifier, double specs[]) {
@@ -37,10 +38,7 @@ public class PrepareParameter {
     public static double[] findSides(Point point[]) {
 	double side[] = new double[point.length];
 	for (int i = 0; i < side.length; i++) {
-	    int k = i + 1;
-	    if (side.length - 1 == i) {
-		k = 0;
-	    }
+	    int k = (i + 1 == side.length) ? 0 : i + 1;
 	    side[i] = Math.hypot(point[i].getX() - point[k].getX(), point[i].getY() - point[k].getY());
 	}
 	return side;
@@ -51,9 +49,17 @@ public class PrepareParameter {
 	return (Math.pow(b, 2) + Math.pow(c, 2) - Math.pow(a, 2)) / 2 * b * c; //теорема косинусов;
     }
 
-    public void findCos() {
+    public double[] findCos(double side[]) {
 	double cos[] = new double[4];
-	
+	for (int i = 0; i < side.length; i++) {
+	    int k = i + 2;
+	    if (side.length - 1 < k) {
+		k = 0; //TODO
+	    }
+	    double side3 = Math.hypot(side[i] - side[k], side[i] - side[k]);
+	    cos[i] = findCos(side3, side[i], side[k]);
+	}
+	return cos;
     }
 
     public double[] getSide() {
