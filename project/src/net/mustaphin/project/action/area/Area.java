@@ -5,10 +5,13 @@
  */
 package net.mustaphin.project.action.area;
 
+import net.mustaphin.project.shape.Point;
+
 /**
  *
  * @author marat
  */
 public abstract class Area {
 
+    public abstract double calc(Point[] point);
 }

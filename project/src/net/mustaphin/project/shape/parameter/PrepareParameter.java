@@ -5,6 +5,8 @@
  */
 package net.mustaphin.project.shape.parameter;
 
+import net.mustaphin.project.action.area.Area;
+import net.mustaphin.project.action.area.areaFactory.AbstractAreaFactory;
 import net.mustaphin.project.action.specifier.Specifier;
 import net.mustaphin.project.action.specifier.specifierFactory.AbstractFactorySpecifier;
 import net.mustaphin.project.shape.Point;
@@ -20,7 +22,12 @@ public class PrepareParameter {
 
     public boolean checkSpecification(AbstractFactorySpecifier factorySpecifier, double specs[]) {
 	Specifier specifier = factorySpecifier.createSpecifier();
-	return specifier.spcify(specs); //возможна исключительная ситуация
+	return specifier.spcify(specs);
+    }
+
+    public double findArea(AbstractAreaFactory areaFactory, Point point[]) {
+	Area area = areaFactory.createArea();
+	return area.calc(point);
     }
 
     public static double[] findSides(Point point[]) {

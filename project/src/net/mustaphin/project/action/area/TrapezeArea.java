@@ -14,7 +14,8 @@ import net.mustaphin.project.shape.parameter.PrepareParameter;
  * @author marat
  */
 public class TrapezeArea extends Area {
-
+    
+    @Override
     public double calc(Point[] point) {
 	double side[] = PrepareParameter.findSides(point);
 	double a = side[0];
