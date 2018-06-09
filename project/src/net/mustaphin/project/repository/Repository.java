@@ -6,11 +6,14 @@
 package net.mustaphin.project.repository;
 
 import java.util.HashMap;
+import net.mustaphin.project.observer.Observer;
+import net.mustaphin.project.observer.TetragonObserver;
 
 /**
  *
  * @author marat
  */
 public class Repository extends HashMap {
-    
+
+    Observer observer = new TetragonObserver();
 }

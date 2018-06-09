@@ -19,9 +19,9 @@ public class Point {
 	this.y = y;
     }
 
-    public Point(String[] coordinate) {
-	this.x = Double.parseDouble(coordinate[0]);
-	this.y = Double.parseDouble(coordinate[1]);
+    public Point(String x, String y) {
+	this.x = Double.parseDouble(x);
+	this.y = Double.parseDouble(y);
     }
 
     public double[] getCoordinate() {
