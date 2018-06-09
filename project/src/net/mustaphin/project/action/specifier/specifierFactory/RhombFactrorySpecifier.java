@@ -5,18 +5,18 @@
  */
 package net.mustaphin.project.action.specifier.specifierFactory;
 
-import net.mustaphin.project.action.specifier.ConvexSpecifer;
+import net.mustaphin.project.action.specifier.RhombSpecifier;
 import net.mustaphin.project.action.specifier.Specifier;
 
 /**
  *
  * @author marat
  */
-public class ConvexFactorySpecifier extends AbstractFactorySpecifier {
+public class RhombFactrorySpecifier extends AbstractFactorySpecifier {
 
     @Override
     public Specifier createSpecifier() {
-	return new ConvexSpecifer();
+	return new RhombSpecifier();
     }
 
 }

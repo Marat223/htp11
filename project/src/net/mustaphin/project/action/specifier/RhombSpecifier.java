@@ -11,18 +11,15 @@ import net.mustaphin.project.action.parameter.PrepareParameter;
  *
  * @author marat
  */
-public class ConvexSpecifer extends Specifier {
+public class RhombSpecifier extends Specifier{
 
-    public boolean specify(PrepareParameter prepare) { //передаваемое значение - сумма всех косинусов
+    @Override
+    public boolean specify(PrepareParameter prepare) {
+	double side[] = prepare.getSide();
 	double cos[] = prepare.getCos();
-	double sumCos = 0;
-	for (double co : cos) {
-	    sumCos += co;
-	}
-	boolean convex = false;
-	if (1 == sumCos) {
-	    convex = true;
-	}
-	return convex;
+	boolean cosCrossSame = cos[0] == cos[2] && cos[1] == cos[3];
+	boolean sidesSame = side[0] == side[1] && side[2] == side[3];
+	return cosCrossSame && sidesSame;
     }
+
 }

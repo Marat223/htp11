@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.shape.parameter;
+package net.mustaphin.project.action.parameter;
 
 import java.util.Objects;
 import net.mustaphin.project.constant.ShapeType;

@@ -8,6 +8,7 @@ package net.mustaphin.project.action.specifier;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import net.mustaphin.project.action.parameter.PrepareParameter;
 
 /**
  *
@@ -15,8 +16,8 @@ import java.util.List;
  */
 public class TrapezeSpecifer extends Specifier {
 
-    public boolean spcify(double cos[]) { //первое значение - типы углов данной фигуры, второе значение 1 из 2 возможных видов
-	int cornerType[] = cornerType(cos);
+    public boolean specify(PrepareParameter prepare) {
+	int cornerType[] = cornerType(prepare.getCos());
 	return checkType(cornerType);
     }
 

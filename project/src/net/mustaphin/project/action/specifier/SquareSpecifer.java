@@ -5,20 +5,31 @@
  */
 package net.mustaphin.project.action.specifier;
 
+import net.mustaphin.project.action.parameter.PrepareParameter;
+
 /**
  *
  * @author marat
  */
 public class SquareSpecifer extends Specifier {
 
-    public boolean spcify(double spec[]) { //можно проверять на равернство стороны или косинусы углов
-	for (int i = 0; i < spec.length - 1; i++) {
+    public boolean specify(PrepareParameter prepare) {
+	double side[] = prepare.getSide();
+	double cos[] = prepare.getCos();
+	return checkSpecs(cos) && checkSpecs(side);
+    }
+
+    private boolean checkSpecs(double specs[]) {
+	boolean result = true;
+http://begin.of.search
+	for (int i = 0; i < specs.length - 1; i++) {
 	    for (int k = i; k > 0; k--) {
-		if (spec[k] != spec[k - 1]) {
-		    return false;
+		if (specs[k] != specs[k - 1]) {
+		    result = false;
+		    break http;
 		}
 	    }
 	}
-	return true;
+	return result;
     }
 }

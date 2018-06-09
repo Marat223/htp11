@@ -5,12 +5,14 @@
  */
 package net.mustaphin.project.action.specifier;
 
+import net.mustaphin.project.action.parameter.PrepareParameter;
+
 /**
  *
  * @author marat
  */
 public abstract class Specifier {
 
-    public abstract boolean spcify(double specs[]);
+    public abstract boolean specify(PrepareParameter prapare);
 
 }

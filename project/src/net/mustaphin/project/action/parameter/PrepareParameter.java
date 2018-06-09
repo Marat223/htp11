@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.shape.parameter;
+package net.mustaphin.project.action.parameter;
 
 import net.mustaphin.project.action.area.Area;
 import net.mustaphin.project.action.area.areaFactory.AbstractAreaFactory;
@@ -25,9 +25,10 @@ public class PrepareParameter {
 	this.cos = findCos(side);
     }
 
-    public boolean checkSpecification(AbstractFactorySpecifier factorySpecifier, double specs[]) {
+    public boolean checkSpecification(AbstractFactorySpecifier factorySpecifier) {
 	Specifier specifier = factorySpecifier.createSpecifier();
-	return specifier.spcify(specs);
+	
+	return specifier.specify(this);
     }
 
     public double findArea(AbstractAreaFactory areaFactory, Point point[]) {
@@ -52,9 +53,11 @@ public class PrepareParameter {
     public double[] findCos(double side[]) {
 	double cos[] = new double[4];
 	for (int i = 0; i < side.length; i++) {
-	    int k = i + 2;
-	    if (side.length - 1 < k) {
-		k = 0; //TODO
+	    int k = 0;
+	    if (side.length - 3 > i) {
+		k = i + 2;
+	    } else {
+		k = i - (side.length - 3);
 	    }
 	    double side3 = Math.hypot(side[i] - side[k], side[i] - side[k]);
 	    cos[i] = findCos(side3, side[i], side[k]);

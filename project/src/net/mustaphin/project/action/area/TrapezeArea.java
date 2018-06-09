@@ -7,7 +7,7 @@ package net.mustaphin.project.action.area;
 
 import static java.lang.Math.*;
 import net.mustaphin.project.shape.Point;
-import net.mustaphin.project.shape.parameter.PrepareParameter;
+import net.mustaphin.project.action.parameter.PrepareParameter;
 
 /**
  *

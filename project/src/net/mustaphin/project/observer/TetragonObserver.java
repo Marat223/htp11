@@ -7,10 +7,16 @@ package net.mustaphin.project.observer;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
+import net.mustaphin.project.action.parameter.GeometricalParameter;
+import net.mustaphin.project.action.parameter.PrepareParameter;
+import net.mustaphin.project.action.specifier.ConvexSpecifer;
+import net.mustaphin.project.action.specifier.specifierFactory.AbstractFactorySpecifier;
+import net.mustaphin.project.action.specifier.specifierFactory.RhombFactrorySpecifier;
+import net.mustaphin.project.action.specifier.specifierFactory.SquareFactorySpecifier;
+import net.mustaphin.project.action.specifier.specifierFactory.TrapezeFactrorySpecifier;
 import net.mustaphin.project.shape.Point;
 import net.mustaphin.project.shape.Tetragon;
-import net.mustaphin.project.shape.parameter.GeometricalParameter;
-import net.mustaphin.project.shape.parameter.PrepareParameter;
 
 /**
  *
@@ -39,8 +45,18 @@ public class TetragonObserver implements Observer {
 	GeometricalParameter parameter = new GeometricalParameter();
 	Point point[] = tetragon.getPoint();
 	PrepareParameter prepare = new PrepareParameter(point);
-	double side[] = prepare.getSide();
-	//TODO
+	boolean result = new ConvexSpecifer().specify(prepare);
+	parameter.setIsConvex(result);
+	List<AbstractFactorySpecifier> factorySpecifier = new ArrayList<>();
+	factorySpecifier.add(new RhombFactrorySpecifier());
+	factorySpecifier.add(new SquareFactorySpecifier());
+	factorySpecifier.add(new TrapezeFactrorySpecifier());
+	for (AbstractFactorySpecifier specifier : factorySpecifier) {
+	    if (prepare.checkSpecification(specifier)) {
+		
+	    }
+	}
+
     }
 
 }
