@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import net.mustaphin.project.action.parameter.PrepareParameter;
+import net.mustaphin.project.constant.ShapeType;
 
 /**
  *
@@ -17,6 +18,7 @@ import net.mustaphin.project.action.parameter.PrepareParameter;
 public class TrapezeSpecifer extends Specifier {
 
     public boolean specify(PrepareParameter prepare) {
+	type = ShapeType.TRAPEZE;
 	int cornerType[] = cornerType(prepare.getCos());
 	return checkType(cornerType);
     }

@@ -8,8 +8,13 @@ package net.mustaphin.project.observer;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import net.mustaphin.project.action.area.areaFactory.AbstractAreaFactory;
+import net.mustaphin.project.action.area.areaFactory.RhombAreaFactory;
+import net.mustaphin.project.action.area.areaFactory.SquareAreaFactory;
+import net.mustaphin.project.action.area.areaFactory.TrapezeAreaFactory;
 import net.mustaphin.project.action.parameter.GeometricalParameter;
 import net.mustaphin.project.action.parameter.PrepareParameter;
+import net.mustaphin.project.action.perimeter.CalcPerimeter;
 import net.mustaphin.project.action.specifier.ConvexSpecifer;
 import net.mustaphin.project.action.specifier.specifierFactory.AbstractFactorySpecifier;
 import net.mustaphin.project.action.specifier.specifierFactory.RhombFactrorySpecifier;
@@ -45,6 +50,7 @@ public class TetragonObserver implements Observer {
 	GeometricalParameter parameter = new GeometricalParameter();
 	Point point[] = tetragon.getPoint();
 	PrepareParameter prepare = new PrepareParameter(point);
+	parameter.setPerimeter(CalcPerimeter.calc(prepare.getSide()));
 	boolean result = new ConvexSpecifer().specify(prepare);
 	parameter.setIsConvex(result);
 	List<AbstractFactorySpecifier> factorySpecifier = new ArrayList<>();
@@ -53,10 +59,26 @@ public class TetragonObserver implements Observer {
 	factorySpecifier.add(new TrapezeFactrorySpecifier());
 	for (AbstractFactorySpecifier specifier : factorySpecifier) {
 	    if (prepare.checkSpecification(specifier)) {
-		
+		parameter.setType(prepare.getShapeType());
+		break;
 	    }
 	}
-
+	AbstractAreaFactory areaFactory = null;
+	switch (parameter.getType()) {
+	    case RHOMB:
+		areaFactory = new RhombAreaFactory();
+		break;
+	    case SQUARE:
+		areaFactory = new SquareAreaFactory();
+		break;
+	    case TRAPEZE:
+		areaFactory = new TrapezeAreaFactory();
+		break;
+	    default:
+		// TODO бросить исключение
+		break;
+	}
+	parameter.setArea(prepare.findArea(areaFactory));
     }
 
 }

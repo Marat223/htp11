@@ -9,6 +9,7 @@ import net.mustaphin.project.action.area.Area;
 import net.mustaphin.project.action.area.areaFactory.AbstractAreaFactory;
 import net.mustaphin.project.action.specifier.Specifier;
 import net.mustaphin.project.action.specifier.specifierFactory.AbstractFactorySpecifier;
+import net.mustaphin.project.constant.ShapeType;
 import net.mustaphin.project.shape.Point;
 
 /**
@@ -19,19 +20,22 @@ public class PrepareParameter {
 
     private double[] side = new double[4];
     private double[] cos = new double[4];
+    private Point[] point = new Point[4];
+    private ShapeType shapeType;
 
     public PrepareParameter(Point point[]) {
 	this.side = findSides(point);
 	this.cos = findCos(side);
+	this.point = point;
     }
 
     public boolean checkSpecification(AbstractFactorySpecifier factorySpecifier) {
 	Specifier specifier = factorySpecifier.createSpecifier();
-	
+	shapeType = specifier.getType();
 	return specifier.specify(this);
     }
 
-    public double findArea(AbstractAreaFactory areaFactory, Point point[]) {
+    public double findArea(AbstractAreaFactory areaFactory) {
 	Area area = areaFactory.createArea();
 	return area.calc(point);
     }
@@ -63,6 +67,10 @@ public class PrepareParameter {
 	    cos[i] = findCos(side3, side[i], side[k]);
 	}
 	return cos;
+    }
+
+    public ShapeType getShapeType() {
+	return shapeType;
     }
 
     public double[] getSide() {

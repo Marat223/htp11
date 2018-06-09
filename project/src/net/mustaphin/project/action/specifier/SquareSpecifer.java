@@ -6,6 +6,7 @@
 package net.mustaphin.project.action.specifier;
 
 import net.mustaphin.project.action.parameter.PrepareParameter;
+import net.mustaphin.project.constant.ShapeType;
 
 /**
  *
@@ -14,6 +15,7 @@ import net.mustaphin.project.action.parameter.PrepareParameter;
 public class SquareSpecifer extends Specifier {
 
     public boolean specify(PrepareParameter prepare) {
+	type = ShapeType.RHOMB;
 	double side[] = prepare.getSide();
 	double cos[] = prepare.getCos();
 	return checkSpecs(cos) && checkSpecs(side);
