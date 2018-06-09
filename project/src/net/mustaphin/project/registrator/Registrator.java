@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.repository;
+package net.mustaphin.project.registrator;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +15,7 @@ import net.mustaphin.project.parameter.GeometricalParameter;
  *
  * @author marat
  */
-public class Repository {
+public class Registrator {
 
     private Map<Integer, GeometricalParameter> parameters = new HashMap<>();
     Observer observer = new TetragonObserver();

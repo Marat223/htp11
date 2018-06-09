@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.repository;
+package net.mustaphin.project.registrator;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import net.mustaphin.project.readData.sequence.Sequencer;
 import net.mustaphin.project.shape.Point;
 import net.mustaphin.project.shape.Tetragon;
@@ -16,6 +18,15 @@ import net.mustaphin.project.shape.Tetragon;
  * @author marat
  */
 public class ShapeCombiner {
+
+    public Map<Integer, Tetragon> tetragonsCreate(String path) {
+	Map<Integer, Tetragon> tetragons = new HashMap<>();
+	int id = 0;
+	for (Point[] stringToPoint : stringToPoints(Sequencer.sequenceInputData(path))) {
+	    tetragons.put(id++, new Tetragon(stringToPoint));
+	}
+	return tetragons;
+    }
 
     public List<Point[]> stringToPoints(List<String[]> stringCoordinate) {
 	List<Point[]> points = new ArrayList<>();
@@ -29,12 +40,6 @@ public class ShapeCombiner {
 	}
 	return points;
     }
-
-    public List<Tetragon> tetragonsCreate(String path) {
-	List<Tetragon> tetragons = new ArrayList<>();
-	for (Point[] stringToPoint : stringToPoints(Sequencer.sequenceInputData(path))) {
-	    tetragons.add(new Tetragon(stringToPoint));
-	}
-	return tetragons;
-    }
+    
+    
 }

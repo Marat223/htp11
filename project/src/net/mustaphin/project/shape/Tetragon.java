@@ -60,6 +60,12 @@ public class Tetragon {
 
     public void setPoint(Point[] point) {
 	this.point = point;
+	notifyObserver();
+    }
+
+    public void setPoint(int position, Point point) {
+	this.point[position] = point;
+	notifyObserver();
     }
 
     @Override

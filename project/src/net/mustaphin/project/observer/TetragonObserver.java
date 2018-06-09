@@ -13,14 +13,14 @@ import net.mustaphin.project.action.area.areaFactory.RhombAreaFactory;
 import net.mustaphin.project.action.area.areaFactory.SquareAreaFactory;
 import net.mustaphin.project.action.area.areaFactory.TrapezeAreaFactory;
 import net.mustaphin.project.action.naturalTetragon.NaturalTetragon;
-import net.mustaphin.project.parameter.GeometricalParameter;
-import net.mustaphin.project.parameter.PrepareParameter;
 import net.mustaphin.project.action.perimeter.CalcPerimeter;
 import net.mustaphin.project.action.specifier.ConvexSpecifer;
 import net.mustaphin.project.action.specifier.specifierFactory.AbstractFactorySpecifier;
 import net.mustaphin.project.action.specifier.specifierFactory.RhombFactrorySpecifier;
 import net.mustaphin.project.action.specifier.specifierFactory.SquareFactorySpecifier;
 import net.mustaphin.project.action.specifier.specifierFactory.TrapezeFactrorySpecifier;
+import net.mustaphin.project.parameter.GeometricalParameter;
+import net.mustaphin.project.parameter.PrepareParameter;
 import net.mustaphin.project.shape.Point;
 import net.mustaphin.project.shape.Tetragon;
 
@@ -48,7 +48,7 @@ public class TetragonObserver implements Observer {
 
     @Override
     public void handleEvent(Tetragon tetragon) {
-	GeometricalParameter parameter = new GeometricalParameter();
+	GeometricalParameter parameter = new GeometricalParameter(); //TODO сделать синглтон
 	Point point[] = tetragon.getPoint();
 	NaturalTetragon natural = new NaturalTetragon();
 	parameter.setIsTetragon(natural.checkNatural(point));
