@@ -16,7 +16,7 @@ import net.mustaphin.project.readData.validator.LinesValidator;
  */
 public class Sequencer {
 
-    public List<String[]> sequenceInputData(String path) {
+    public static List<String[]> sequenceInputData(String path) {
 	ReaderFile reader = new ReaderFile();
 	List<String> raw = reader.readParameters(path); //будет использован файл по-умолчанию
 	ParserLine parser = new ParserLine();

@@ -7,7 +7,9 @@ package net.mustaphin.project.repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import net.mustaphin.project.readData.sequence.Sequencer;
 import net.mustaphin.project.shape.Point;
+import net.mustaphin.project.shape.Tetragon;
 
 /**
  *
@@ -27,6 +29,12 @@ public class ShapeCombiner {
 	}
 	return points;
     }
-    
-    
+
+    public List<Tetragon> tetragonsCreate(String path) {
+	List<Tetragon> tetragons = new ArrayList<>();
+	for (Point[] stringToPoint : stringToPoints(Sequencer.sequenceInputData(path))) {
+	    tetragons.add(new Tetragon(stringToPoint));
+	}
+	return tetragons;
+    }
 }
