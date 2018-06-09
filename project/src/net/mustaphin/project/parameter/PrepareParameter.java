@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.parameter;
+package net.mustaphin.project.parameter;
 
 import net.mustaphin.project.action.area.Area;
 import net.mustaphin.project.action.area.areaFactory.AbstractAreaFactory;

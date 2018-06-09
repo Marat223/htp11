@@ -8,7 +8,7 @@ package net.mustaphin.project.action.specifier;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-import net.mustaphin.project.action.parameter.PrepareParameter;
+import net.mustaphin.project.parameter.PrepareParameter;
 import net.mustaphin.project.constant.ShapeType;
 
 /**

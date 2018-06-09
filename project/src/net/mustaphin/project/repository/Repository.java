@@ -6,14 +6,17 @@
 package net.mustaphin.project.repository;
 
 import java.util.HashMap;
+import java.util.Map;
 import net.mustaphin.project.observer.Observer;
 import net.mustaphin.project.observer.TetragonObserver;
+import net.mustaphin.project.parameter.GeometricalParameter;
 
 /**
  *
  * @author marat
  */
-public class Repository extends HashMap {
+public class Repository {
 
+    private Map<Integer, GeometricalParameter> parameters = new HashMap<>();
     Observer observer = new TetragonObserver();
 }

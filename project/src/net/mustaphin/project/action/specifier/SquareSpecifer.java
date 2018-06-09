@@ -5,7 +5,7 @@
  */
 package net.mustaphin.project.action.specifier;
 
-import net.mustaphin.project.action.parameter.PrepareParameter;
+import net.mustaphin.project.parameter.PrepareParameter;
 import net.mustaphin.project.constant.ShapeType;
 
 /**

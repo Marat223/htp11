@@ -12,8 +12,9 @@ import net.mustaphin.project.action.area.areaFactory.AbstractAreaFactory;
 import net.mustaphin.project.action.area.areaFactory.RhombAreaFactory;
 import net.mustaphin.project.action.area.areaFactory.SquareAreaFactory;
 import net.mustaphin.project.action.area.areaFactory.TrapezeAreaFactory;
-import net.mustaphin.project.action.parameter.GeometricalParameter;
-import net.mustaphin.project.action.parameter.PrepareParameter;
+import net.mustaphin.project.action.naturalTetragon.NaturalTetragon;
+import net.mustaphin.project.parameter.GeometricalParameter;
+import net.mustaphin.project.parameter.PrepareParameter;
 import net.mustaphin.project.action.perimeter.CalcPerimeter;
 import net.mustaphin.project.action.specifier.ConvexSpecifer;
 import net.mustaphin.project.action.specifier.specifierFactory.AbstractFactorySpecifier;
@@ -49,6 +50,8 @@ public class TetragonObserver implements Observer {
     public void handleEvent(Tetragon tetragon) {
 	GeometricalParameter parameter = new GeometricalParameter();
 	Point point[] = tetragon.getPoint();
+	NaturalTetragon natural = new NaturalTetragon();
+	parameter.setIsTetragon(natural.checkNatural(point));
 	PrepareParameter prepare = new PrepareParameter(point);
 	parameter.setPerimeter(CalcPerimeter.calc(prepare.getSide()));
 	boolean result = new ConvexSpecifer().specify(prepare);
