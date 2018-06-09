@@ -30,7 +30,7 @@ import net.mustaphin.project.shape.Tetragon;
  */
 public class TetragonObserver implements Observer {
 
-    private ArrayList<Tetragon> list = new ArrayList<>();
+    private ArrayList<Tetragon> list = new ArrayList<>();//TODO сделать из этого репозиторий
 
     public void addObservable(Tetragon tetragon) {
 	list.add(tetragon);
@@ -48,7 +48,7 @@ public class TetragonObserver implements Observer {
 
     @Override
     public void handleEvent(Tetragon tetragon) {
-	GeometricalParameter parameter = new GeometricalParameter(); //TODO сделать синглтон
+	GeometricalParameter parameter = new GeometricalParameter();
 	Point point[] = tetragon.getPoint();
 	NaturalTetragon natural = new NaturalTetragon();
 	parameter.setIsTetragon(natural.checkNatural(point));

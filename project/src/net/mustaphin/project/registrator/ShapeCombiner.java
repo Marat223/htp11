@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import net.mustaphin.project.observer.Observer;
+import net.mustaphin.project.observer.TetragonObserver;
 import net.mustaphin.project.readData.sequence.Sequencer;
 import net.mustaphin.project.shape.Point;
 import net.mustaphin.project.shape.Tetragon;
@@ -21,9 +23,13 @@ public class ShapeCombiner {
 
     public Map<Integer, Tetragon> tetragonsCreate(String path) {
 	Map<Integer, Tetragon> tetragons = new HashMap<>();
+	Observer observer = new TetragonObserver();
 	int id = 0;
 	for (Point[] stringToPoint : stringToPoints(Sequencer.sequenceInputData(path))) {
-	    tetragons.put(id++, new Tetragon(stringToPoint));
+	    Tetragon tetragon = new Tetragon();
+	    tetragon.addObserver(observer);
+	    tetragon.setPoints(stringToPoint);
+	    tetragons.put(id++, tetragon);
 	}
 	return tetragons;
     }
@@ -40,6 +46,5 @@ public class ShapeCombiner {
 	}
 	return points;
     }
-    
-    
+
 }

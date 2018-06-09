@@ -7,7 +7,7 @@ package net.mustaphin.project.shape;
 
 import java.util.Arrays;
 import java.util.Objects;
-import net.mustaphin.project.observer.TetragonObserver;
+import net.mustaphin.project.observer.Observer;
 
 /**
  *
@@ -15,16 +15,18 @@ import net.mustaphin.project.observer.TetragonObserver;
  */
 public class Tetragon {
 
-    private int id;
     private Point point[] = new Point[4];
-    private TetragonObserver observer;
+    private Observer observer;
 
     public Tetragon(Point point[]) {
 	this.point = point;
 	notifyObserver();
     }
 
-    public void addObserver(TetragonObserver observer) {
+    public Tetragon() {
+    }
+
+    public void addObserver(Observer observer) {
 	this.observer = observer;
 	observer.addObservable(this);
     }
@@ -42,14 +44,6 @@ public class Tetragon {
 	}
     }
 
-    public int getId() {
-	return id;
-    }
-
-    public void setId(int id) {
-	this.id = id;
-    }
-
     public Point[] getPoint() {
 	return point;
     }
@@ -58,7 +52,7 @@ public class Tetragon {
 	return this.point[position];
     }
 
-    public void setPoint(Point[] point) {
+    public void setPoints(Point[] point) {
 	this.point = point;
 	notifyObserver();
     }
@@ -71,7 +65,6 @@ public class Tetragon {
     @Override
     public int hashCode() {
 	int hash = 7;
-	hash = 97 * hash + this.id;
 	hash = 97 * hash + Arrays.deepHashCode(this.point);
 	hash = 97 * hash + Objects.hashCode(this.observer);
 	return hash;
@@ -89,9 +82,6 @@ public class Tetragon {
 	    return false;
 	}
 	final Tetragon other = (Tetragon) obj;
-	if (this.id != other.id) {
-	    return false;
-	}
 	if (!Arrays.deepEquals(this.point, other.point)) {
 	    return false;
 	}
@@ -103,7 +93,7 @@ public class Tetragon {
 
     @Override
     public String toString() {
-	return "Tetragon{" + "id=" + id + ", point=" + point + ", observer=" + observer + '}';
+	return "Tetragon{" + ", point=" + point + ", observer=" + observer + '}';
     }
 
 }

@@ -7,8 +7,6 @@ package net.mustaphin.project.registrator;
 
 import java.util.HashMap;
 import java.util.Map;
-import net.mustaphin.project.observer.Observer;
-import net.mustaphin.project.observer.TetragonObserver;
 import net.mustaphin.project.parameter.GeometricalParameter;
 
 /**
@@ -17,6 +15,15 @@ import net.mustaphin.project.parameter.GeometricalParameter;
  */
 public class Registrator {
 
+    private final static Registrator INSTANCE = new Registrator();
+
+    public static Registrator getInstance() {
+	return INSTANCE;
+    }
+
     private Map<Integer, GeometricalParameter> parameters = new HashMap<>();
-    Observer observer = new TetragonObserver();
+
+    private Registrator() {
+    }
+
 }
