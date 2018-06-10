@@ -5,9 +5,9 @@
  */
 package net.mustaphin.project.observer;
 
-import net.mustaphin.project.parameter.registrator.Registrator;
-import net.mustaphin.project.parameter.ParameterInitializer;
 import net.mustaphin.project.parameter.GeometricalParameter;
+import net.mustaphin.project.parameter.ParameterInitializer;
+import net.mustaphin.project.parameter.registrator.Registrator;
 import net.mustaphin.project.shape.Tetragon;
 
 /**
@@ -18,7 +18,8 @@ public class TetragonObserver implements Observer {
     
     @Override
     public void handleEvent(Tetragon tetragon) {
-	GeometricalParameter parameter = ParameterInitializer.initialize(tetragon.getPoint());
+	ParameterInitializer initializer = new ParameterInitializer();
+	GeometricalParameter parameter = initializer.initialize(tetragon.getPoint());
 	Registrator.getInstance().insertParameter(tetragon.getId(), parameter);
     }
     
