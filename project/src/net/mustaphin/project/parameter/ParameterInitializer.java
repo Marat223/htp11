@@ -13,11 +13,11 @@ import net.mustaphin.project.action.area.areaFactory.SquareAreaFactory;
 import net.mustaphin.project.action.area.areaFactory.TrapezeAreaFactory;
 import net.mustaphin.project.action.naturalTetragon.NaturalTetragon;
 import net.mustaphin.project.action.perimeter.CalcPerimeter;
-import net.mustaphin.project.action.specifier.ConvexSpecifer;
-import net.mustaphin.project.action.specifier.specifierFactory.AbstractFactorySpecifier;
-import net.mustaphin.project.action.specifier.specifierFactory.RhombFactrorySpecifier;
-import net.mustaphin.project.action.specifier.specifierFactory.SquareFactorySpecifier;
-import net.mustaphin.project.action.specifier.specifierFactory.TrapezeFactrorySpecifier;
+import net.mustaphin.project.action.particular.ConvexParticular;
+import net.mustaphin.project.action.particular.specifierFactory.AbstractFactoryParticular;
+import net.mustaphin.project.action.particular.specifierFactory.RhombFactroryParticular;
+import net.mustaphin.project.action.particular.specifierFactory.SquareFactoryParticular;
+import net.mustaphin.project.action.particular.specifierFactory.TrapezeFactroryParticular;
 import net.mustaphin.project.shape.Point;
 
 /**
@@ -43,16 +43,16 @@ public class ParameterInitializer {
     }
 
     private void checkConvex(GeometricalParameter parameter, PrepareParameter prepare) {
-	boolean result = new ConvexSpecifer().specify(prepare);
+	boolean result = new ConvexParticular().clarify(prepare);
 	parameter.setIsConvex(result);
     }
 
     private void checkType(GeometricalParameter parameter, PrepareParameter prepare) {
-	List<AbstractFactorySpecifier> factorySpecifier = new ArrayList<>();
-	factorySpecifier.add(new RhombFactrorySpecifier());
-	factorySpecifier.add(new SquareFactorySpecifier());
-	factorySpecifier.add(new TrapezeFactrorySpecifier());
-	for (AbstractFactorySpecifier specifier : factorySpecifier) {
+	List<AbstractFactoryParticular> factorySpecifier = new ArrayList<>();
+	factorySpecifier.add(new RhombFactroryParticular());
+	factorySpecifier.add(new SquareFactoryParticular());
+	factorySpecifier.add(new TrapezeFactroryParticular());
+	for (AbstractFactoryParticular specifier : factorySpecifier) {
 	    if (prepare.checkSpecification(specifier)) {
 		parameter.setType(prepare.getShapeType());
 		break;

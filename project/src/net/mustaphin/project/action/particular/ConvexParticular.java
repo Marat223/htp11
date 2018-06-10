@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.specifier;
+package net.mustaphin.project.action.particular;
 
 import net.mustaphin.project.parameter.PrepareParameter;
 
@@ -11,9 +11,9 @@ import net.mustaphin.project.parameter.PrepareParameter;
  *
  * @author marat
  */
-public class ConvexSpecifer extends Specifier {
+public class ConvexParticular extends Particular {
 
-    public boolean specify(PrepareParameter prepare) { //передаваемое значение - сумма всех косинусов
+    public boolean clarify(PrepareParameter prepare) { //передаваемое значение - сумма всех косинусов
 	double cos[] = prepare.getCos();
 	double sumCos = 0;
 	for (double co : cos) {

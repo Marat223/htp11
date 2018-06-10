@@ -23,7 +23,7 @@ public class TetragonRepository {
     public void changeShape(Tetragon tetragon) {
     }
 
-    public List<Tetragon> query(Particularity particular) {
-	return particular.find();
+    public List<Tetragon> query(Specification specification) {
+	return specification.find();
     }
 }

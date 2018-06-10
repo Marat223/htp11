@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.specifier;
+package net.mustaphin.project.action.particular;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -15,9 +15,9 @@ import net.mustaphin.project.constant.ShapeType;
  *
  * @author marat
  */
-public class TrapezeSpecifer extends Specifier {
+public class TrapezeParticular extends Particular {
 
-    public boolean specify(PrepareParameter prepare) {
+    public boolean clarify(PrepareParameter prepare) {
 	type = ShapeType.TRAPEZE;
 	int cornerType[] = cornerType(prepare.getCos());
 	return checkType(cornerType);

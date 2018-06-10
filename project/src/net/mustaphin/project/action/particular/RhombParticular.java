@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.specifier;
+package net.mustaphin.project.action.particular;
 
 import net.mustaphin.project.parameter.PrepareParameter;
 import net.mustaphin.project.constant.ShapeType;
@@ -12,10 +12,10 @@ import net.mustaphin.project.constant.ShapeType;
  *
  * @author marat
  */
-public class RhombSpecifier extends Specifier {
+public class RhombParticular extends Particular {
 
     @Override
-    public boolean specify(PrepareParameter prepare) {
+    public boolean clarify(PrepareParameter prepare) {
 	type = ShapeType.RHOMB;
 	double side[] = prepare.getSide();
 	double cos[] = prepare.getCos();

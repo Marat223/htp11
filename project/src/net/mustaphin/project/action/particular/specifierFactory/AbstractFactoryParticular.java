@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.specifier.specifierFactory;
+package net.mustaphin.project.action.particular.specifierFactory;
 
-import net.mustaphin.project.action.specifier.Specifier;
+import net.mustaphin.project.action.particular.Particular;
 
 /**
  *
  * @author marat
  */
-public abstract class AbstractFactorySpecifier {
+public abstract class AbstractFactoryParticular {
 
-    public abstract Specifier createSpecifier();
+    public abstract Particular createParticular();
 }

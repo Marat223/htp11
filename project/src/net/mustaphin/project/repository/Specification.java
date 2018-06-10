@@ -12,7 +12,7 @@ import net.mustaphin.project.shape.Tetragon;
  *
  * @author marat
  */
-public interface Particularity {
+public interface Specification {
 
     public List<Tetragon> find();
 }
