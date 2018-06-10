@@ -28,12 +28,10 @@ public class Tetragon {
 
     public void addObserver(Observer observer) {
 	this.observer = observer;
-	observer.addObservable(this);
     }
 
     public void removeObserver() {
 	if (null != observer) {
-	    observer.removeObservable(this);
 	    observer = null;
 	}
     }
@@ -52,7 +50,7 @@ public class Tetragon {
 	return this.point[position];
     }
 
-    public void setPoints(Point[] point) {
+    public void init(Point[] point) {
 	this.point = point;
 	notifyObserver();
     }

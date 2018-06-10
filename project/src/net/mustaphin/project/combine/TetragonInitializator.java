@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.registrator;
+package net.mustaphin.project.combine;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,7 +19,7 @@ import net.mustaphin.project.shape.Tetragon;
  *
  * @author marat
  */
-public class ShapeCombiner {
+public class TetragonInitializator {
 
     public Map<Integer, Tetragon> tetragonsCreate(String path) {
 	Map<Integer, Tetragon> tetragons = new HashMap<>();
@@ -28,7 +28,7 @@ public class ShapeCombiner {
 	for (Point[] stringToPoint : stringToPoints(Sequencer.sequenceInputData(path))) {
 	    Tetragon tetragon = new Tetragon();
 	    tetragon.addObserver(observer);
-	    tetragon.setPoints(stringToPoint);
+	    tetragon.init(stringToPoint);
 	    tetragons.put(id++, tetragon);
 	}
 	return tetragons;

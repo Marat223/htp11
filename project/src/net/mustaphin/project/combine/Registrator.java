@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.registrator;
+package net.mustaphin.project.combine;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,6 +24,14 @@ public class Registrator {
     private Map<Integer, GeometricalParameter> parameters = new HashMap<>();
 
     private Registrator() {
+    }
+
+    public void insertParameter(int id, GeometricalParameter parameter) {
+	parameters.put(id, parameter);
+    }
+
+    public GeometricalParameter getParameter(int id) {
+	return parameters.get(id);
     }
 
 }
