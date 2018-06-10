@@ -5,18 +5,14 @@
  */
 package net.mustaphin.project.repository;
 
+import java.util.List;
 import net.mustaphin.project.shape.Tetragon;
 
 /**
  *
  * @author marat
  */
-public interface Repository {
+public interface Particularity {
 
-    void addShape(Tetragon tetragon);
-
-    void removeShape(Tetragon tetragon);
-
-    void changeShape(Tetragon tetragon);
-
+    public List<Tetragon> find();
 }

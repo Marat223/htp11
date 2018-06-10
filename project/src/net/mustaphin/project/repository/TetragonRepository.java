@@ -5,27 +5,25 @@
  */
 package net.mustaphin.project.repository;
 
+import java.util.List;
 import net.mustaphin.project.shape.Tetragon;
 
 /**
  *
  * @author marat
  */
-public class TetragonRepository implements Repository {
+public class TetragonRepository {
 
-    @Override
     public void addShape(Tetragon tetragon) {
-	throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public void removeShape(Tetragon tetragon) {
-	throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public void changeShape(Tetragon tetragon) {
-	throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public List<Tetragon> query(Particularity particular) {
+	return particular.find();
+    }
 }

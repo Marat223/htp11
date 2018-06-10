@@ -18,9 +18,9 @@ import net.mustaphin.project.shape.Tetragon;
  *
  * @author marat
  */
-public class TetragonCreate {
+public class TetragonsCreate {
 
-    public Map<Integer, Tetragon> tetragonsCreate(String path, Observer observer) {
+    public Map<Integer, Tetragon> create(String path, Observer observer) {
 	Map<Integer, Tetragon> tetragons = new HashMap<>();
 	int id = 0;
 	for (Point[] realPoints : stringToPoints(Sequencer.sequenceInputData(path))) {
