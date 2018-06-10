@@ -18,10 +18,12 @@ public class Tetragon {
     private Point point[] = new Point[4];
     private Observer observer;
     private int id;
+
     public Tetragon(Point point[]) {
 	this.point = point;
 	notifyObserver();
     }
+
     public Tetragon() {
     }
 
@@ -40,7 +42,6 @@ public class Tetragon {
     public void setId(int id) {
 	this.id = id;
     }
-
 
     public void addObserver(Observer observer) {
 	this.observer = observer;
@@ -114,5 +115,4 @@ public class Tetragon {
 	return "Tetragon{" + "point=" + point + ", observer=" + observer + ", id=" + id + '}';
     }
 
-    
 }
