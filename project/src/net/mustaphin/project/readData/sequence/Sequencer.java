@@ -6,9 +6,9 @@
 package net.mustaphin.project.readData.sequence;
 
 import java.util.List;
-import net.mustaphin.project.readData.parser.ParserLine;
-import net.mustaphin.project.readData.readerFile.ReaderFile;
-import net.mustaphin.project.readData.validator.LinesValidator;
+import net.mustaphin.project.readData.ParserLine;
+import net.mustaphin.project.readData.ReaderFile;
+import net.mustaphin.project.readData.LinesValidator;
 
 /**
  *

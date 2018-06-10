@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.readData.validator;
+package net.mustaphin.project.readData;
 
 import java.util.ArrayList;
 import java.util.List;
