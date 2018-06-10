@@ -17,14 +17,30 @@ public class Tetragon {
 
     private Point point[] = new Point[4];
     private Observer observer;
-
+    private int id;
     public Tetragon(Point point[]) {
 	this.point = point;
 	notifyObserver();
     }
-
     public Tetragon() {
     }
+
+    public Observer getObserver() {
+	return observer;
+    }
+
+    public void setObserver(Observer observer) {
+	this.observer = observer;
+    }
+
+    public int getId() {
+	return id;
+    }
+
+    public void setId(int id) {
+	this.id = id;
+    }
+
 
     public void addObserver(Observer observer) {
 	this.observer = observer;
@@ -63,8 +79,9 @@ public class Tetragon {
     @Override
     public int hashCode() {
 	int hash = 7;
-	hash = 97 * hash + Arrays.deepHashCode(this.point);
-	hash = 97 * hash + Objects.hashCode(this.observer);
+	hash = 17 * hash + Arrays.deepHashCode(this.point);
+	hash = 17 * hash + Objects.hashCode(this.observer);
+	hash = 17 * hash + this.id;
 	return hash;
     }
 
@@ -80,6 +97,9 @@ public class Tetragon {
 	    return false;
 	}
 	final Tetragon other = (Tetragon) obj;
+	if (this.id != other.id) {
+	    return false;
+	}
 	if (!Arrays.deepEquals(this.point, other.point)) {
 	    return false;
 	}
@@ -91,7 +111,8 @@ public class Tetragon {
 
     @Override
     public String toString() {
-	return "Tetragon{" + ", point=" + point + ", observer=" + observer + '}';
+	return "Tetragon{" + "point=" + point + ", observer=" + observer + ", id=" + id + '}';
     }
 
+    
 }

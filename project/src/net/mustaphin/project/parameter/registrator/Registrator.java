@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.combine;
+package net.mustaphin.project.parameter.registrator;
 
 import java.util.HashMap;
 import java.util.Map;
+import net.mustaphin.project.parameter.GeometricalParameter;
 import net.mustaphin.project.parameter.GeometricalParameter;
 
 /**
