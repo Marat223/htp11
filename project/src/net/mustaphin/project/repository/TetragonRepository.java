@@ -58,6 +58,6 @@ public class TetragonRepository {
     }
 
     public List<Tetragon> query(ISpecification specification) {
-	return specification.specified();
+	return specification.specified(repository);
     }
 }

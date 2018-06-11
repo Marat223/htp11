@@ -19,6 +19,7 @@ public class Tetragon {
 
     private Observer observer;
     private int id;
+    private String name;
 
     public Tetragon(Point point[]) {
 	this.point = point;
@@ -82,12 +83,21 @@ public class Tetragon {
 	this.point = point;
     }
 
+    public String getName() {
+	return name;
+    }
+
+    public void setName(String name) {
+	this.name = name;
+    }
+
     @Override
     public int hashCode() {
-	int hash = 7;
-	hash = 17 * hash + Arrays.deepHashCode(this.point);
-	hash = 17 * hash + Objects.hashCode(this.observer);
-	hash = 17 * hash + this.id;
+	int hash = 3;
+	hash = 29 * hash + Arrays.deepHashCode(this.point);
+	hash = 29 * hash + Objects.hashCode(this.observer);
+	hash = 29 * hash + this.id;
+	hash = 29 * hash + Objects.hashCode(this.name);
 	return hash;
     }
 
@@ -106,6 +116,9 @@ public class Tetragon {
 	if (this.id != other.id) {
 	    return false;
 	}
+	if (!Objects.equals(this.name, other.name)) {
+	    return false;
+	}
 	if (!Arrays.deepEquals(this.point, other.point)) {
 	    return false;
 	}
@@ -117,7 +130,7 @@ public class Tetragon {
 
     @Override
     public String toString() {
-	return "Tetragon{" + "point=" + point + ", observer=" + observer + ", id=" + id + '}';
+	return "Tetragon{" + "point=" + point + ", observer=" + observer + ", id=" + id + ", name=" + name + '}';
     }
 
 }

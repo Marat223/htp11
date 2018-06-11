@@ -6,7 +6,6 @@
 package net.mustaphin.project.repository;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import net.mustaphin.project.shape.Tetragon;
 
@@ -14,17 +13,24 @@ import net.mustaphin.project.shape.Tetragon;
  *
  * @author marat
  */
-public class SpecificationById implements ISpecification {
-    
-    private int id;
-    
-    public SpecificationById(int id) {
-	this.id = id;
+public class SpecificationByName implements ISpecification {
+
+    private String name;
+
+    public SpecificationByName(String name) {
+	this.name = name;
     }
-    
+
     @Override
     public List<Tetragon> specified(List<Tetragon> repository) {
-	return new ArrayList<>(Arrays.asList(new Tetragon[]{repository.get(id)}));
+	List<Tetragon> tetragons = new ArrayList<>();
+	for (Tetragon tetragon : repository) {
+	    if (name.equals(tetragon.getName())) {
+		tetragons.add(tetragon);
+		break;
+	    }
+	}
+	return tetragons;
     }
-    
+
 }
