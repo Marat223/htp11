@@ -17,13 +17,17 @@ public class Registrator {
 
     private final static Registrator INSTANCE = new Registrator();
 
-    public static Registrator getInstance() {
+    public static Registrator getINSTANCE() {
 	return INSTANCE;
     }
 
     private Map<Integer, GeometricalParameter> parameters = new HashMap<>();
 
     private Registrator() {
+    }
+
+    public Map<Integer, GeometricalParameter> getParameters() {
+	return parameters;
     }
 
     public void insertParameter(int id, GeometricalParameter external) { //2 ретурна
