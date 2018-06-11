@@ -15,12 +15,13 @@ import net.mustaphin.project.shape.Tetragon;
  * @author marat
  */
 public class TetragonObserver implements Observer {
-    
+
     @Override
     public void handleEvent(Tetragon tetragon) {
 	ParameterInitializer initializer = new ParameterInitializer();
 	GeometricalParameter parameter = initializer.initialize(tetragon.getPoint());
-	Registrator.getINSTANCE().insertParameter(tetragon.getId(), parameter);
+	int id = tetragon.getId();
+	Registrator.getINSTANCE().insertParameter(id, parameter);
     }
-    
+
 }

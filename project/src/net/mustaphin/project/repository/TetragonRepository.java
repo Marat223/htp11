@@ -6,8 +6,8 @@
 package net.mustaphin.project.repository;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+import net.mustaphin.project.parameter.registrator.Registrator;
 import net.mustaphin.project.shape.Tetragon;
 
 /**
@@ -16,45 +16,35 @@ import net.mustaphin.project.shape.Tetragon;
  */
 public class TetragonRepository {
 
-    private List<Tetragon> repository = new ArrayList<>();
-
-    private TetragonRepository() {
-    }
-
     private final static TetragonRepository INSTANSE = new TetragonRepository();
 
     public static TetragonRepository getINSTANSE() {
 	return INSTANSE;
     }
 
+    private List<Tetragon> repository = new ArrayList<>();
+
+    private TetragonRepository() {
+    }
+
     public int addShape(Tetragon tetragon) {
 	repository.add(tetragon);
-	return repository.size() - 1;
+	return repository.indexOf(tetragon);
     }
 
-    public boolean removeShape(Tetragon tetragon) {
-	boolean removed = false;
-	Iterator<Tetragon> it = repository.iterator();
-	while (it.hasNext()) {
-	    if (it.next().equals(tetragon)) {
-		it.remove();
-		removed = true;
-		break;
-	    }
-	}
-	return removed;
+    public void removeShape(Tetragon tetragon) {
+	int id = tetragon.getId();
+	Registrator.getINSTANCE().removeParameter(id);
+	repository.remove(id);
     }
 
-    public boolean updateShape(Tetragon tetragon) {
-	boolean added = false;
+    public void updateShape(Tetragon tetragon) {
 	for (Tetragon internal : repository) {
 	    if (internal.equals(tetragon)) {
 		internal.setPoints(tetragon.getPoint());
-		added = true;
 		break;
 	    }
 	}
-	return added;
     }
 
     public List<Tetragon> query(ISpecification specification) {

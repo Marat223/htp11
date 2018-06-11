@@ -5,8 +5,8 @@
  */
 package net.mustaphin.project.parameter.registrator;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import net.mustaphin.project.parameter.GeometricalParameter;
 
 /**
@@ -21,25 +21,29 @@ public class Registrator {
 	return INSTANCE;
     }
 
-    private Map<Integer, GeometricalParameter> parameters = new HashMap<>();
+    private List<GeometricalParameter> parameters = new ArrayList<>();
 
     private Registrator() {
     }
 
-    public Map<Integer, GeometricalParameter> getParameters() {
-	return parameters;
+    public List<GeometricalParameter> getParameters() {
+	return parameters; //FIX
     }
 
-    public void insertParameter(int id, GeometricalParameter external) { //2 ретурна
-	parameters.put(id, external);
+    public void insertParameter(int id, GeometricalParameter external) {
+	if (null == parameters.get(id)) {
+	    parameters.add(id, external);
+	} else {
+	    parameters.set(id, external);
+	}
     }
 
-    public GeometricalParameter getParameter(int index) {
-	return parameters.get(index);
+    public GeometricalParameter getParameter(int id) {
+	return parameters.get(id);
     }
 
-    public void removeParameter(int index) {
-	parameters.remove(index);
+    public void removeParameter(int id) {
+	parameters.remove(id);
     }
 
 }
