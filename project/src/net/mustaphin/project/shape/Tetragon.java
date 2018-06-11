@@ -16,6 +16,7 @@ import net.mustaphin.project.observer.Observer;
 public class Tetragon {
 
     private Point point[] = new Point[4];
+
     private Observer observer;
     private int id;
 
@@ -75,6 +76,10 @@ public class Tetragon {
     public void setPoint(int position, Point point) {
 	this.point[position] = point;
 	notifyObserver();
+    }
+
+    public void setPoints(Point[] point) {
+	this.point = point;
     }
 
     @Override

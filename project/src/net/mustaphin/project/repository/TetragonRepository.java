@@ -6,6 +6,7 @@
 package net.mustaphin.project.repository;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import net.mustaphin.project.shape.Tetragon;
 
@@ -31,12 +32,29 @@ public class TetragonRepository {
 	return repository.size() - 1;
     }
 
-    public void removeShape(Tetragon tetragon) {
-	// TODO
+    public boolean removeShape(Tetragon tetragon) {
+	boolean removed = false;
+	Iterator<Tetragon> it = repository.iterator();
+	while (it.hasNext()) {
+	    if (it.next().equals(tetragon)) {
+		it.remove();
+		removed = true;
+		break;
+	    }
+	}
+	return removed;
     }
 
-    public void updateShape(Tetragon tetragon) {
-	// TODO
+    public boolean updateShape(Tetragon tetragon) {
+	boolean added = false;
+	for (Tetragon internal : repository) {
+	    if (internal.equals(tetragon)) {
+		internal.setPoints(tetragon.getPoint());
+		added = true;
+		break;
+	    }
+	}
+	return added;
     }
 
     public List<Tetragon> query(ISpecification specification) {
