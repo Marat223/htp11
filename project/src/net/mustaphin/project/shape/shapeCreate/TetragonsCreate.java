@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import net.mustaphin.project.observer.Observer;
 import net.mustaphin.project.readData.sequence.Sequencer;
+import net.mustaphin.project.repository.TetragonRepository;
 import net.mustaphin.project.shape.Point;
 import net.mustaphin.project.shape.Tetragon;
 
@@ -22,7 +23,7 @@ public class TetragonsCreate {
 
     public Map<Integer, Tetragon> create(String path, Observer observer) {
 	Map<Integer, Tetragon> tetragons = new HashMap<>();
-	int id = 0;
+	int id = TetragonRepository.getINSTANSE().getNextId();
 	for (Point[] realPoints : stringToPoints(Sequencer.sequenceInputData(path))) {
 	    Tetragon tetragon = new Tetragon();
 	    tetragon.setId(++id);
