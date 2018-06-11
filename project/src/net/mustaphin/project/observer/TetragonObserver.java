@@ -20,8 +20,7 @@ public class TetragonObserver implements Observer {
     public void handleEvent(Tetragon tetragon) {
 	ParameterInitializer initializer = new ParameterInitializer();
 	GeometricalParameter parameter = initializer.initialize(tetragon.getPoint());
-	int id = tetragon.getId();
-	Registrator.getINSTANCE().insertParameter(id, parameter);
+	Registrator.getINSTANCE().insertParameter(tetragon.getId(), parameter);
     }
 
 }

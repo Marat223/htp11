@@ -15,12 +15,12 @@ import net.mustaphin.project.shape.Tetragon;
  *
  * @author marat
  */
-public class SpecificationByAreaRange implements ISpecification {
+public class SpecificationByPerimeterRange implements ISpecification {
 
     private double min;
     private double max;
 
-    public SpecificationByAreaRange(double min, double max) {
+    public SpecificationByPerimeterRange(double min, double max) {
 	this.min = min;
 	this.max = max;
     }
@@ -31,8 +31,8 @@ public class SpecificationByAreaRange implements ISpecification {
 	Registrator registrator = Registrator.getINSTANCE();
 	List<GeometricalParameter> parameters = registrator.getParameters();
 	for (GeometricalParameter parameter : parameters) {
-	    double square = parameter.getArea();
-	    if (min < square && max > square) {
+	    double perimeter = parameter.getPerimeter();
+	    if (min < perimeter && max > perimeter) {
 		int id = registrator.getId(parameter);
 		tetragons.add(repository.get(id));
 	    }

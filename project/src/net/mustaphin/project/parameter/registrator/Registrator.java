@@ -38,6 +38,10 @@ public class Registrator {
 	}
     }
 
+    public int getId(GeometricalParameter parameter) {
+	return parameters.indexOf(parameter);
+    }
+
     public GeometricalParameter getParameter(int id) {
 	return parameters.get(id);
     }
