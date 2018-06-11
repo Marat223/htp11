@@ -6,9 +6,7 @@
 package net.mustaphin.project.shape.shapeCreate;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import net.mustaphin.project.observer.Observer;
 import net.mustaphin.project.readData.sequence.Sequencer;
 import net.mustaphin.project.repository.TetragonRepository;
@@ -21,17 +19,14 @@ import net.mustaphin.project.shape.Tetragon;
  */
 public class TetragonsCreate {
 
-    public Map<Integer, Tetragon> create(String path, Observer observer) {
-	Map<Integer, Tetragon> tetragons = new HashMap<>();
-	int id = TetragonRepository.getINSTANSE().getNextId();
+    public void create(String path, Observer observer) {
+	TetragonRepository repository = TetragonRepository.getINSTANSE();
 	for (Point[] realPoints : stringToPoints(Sequencer.sequenceInputData(path))) {
 	    Tetragon tetragon = new Tetragon();
-	    tetragon.setId(++id);
+	    tetragon.setId(repository.addShape(tetragon));
 	    tetragon.addObserver(observer);
 	    tetragon.init(realPoints);
-	    tetragons.put(id, tetragon);
 	}
-	return tetragons;
     }
 
     public List<Point[]> stringToPoints(List<String[]> stringCoordinate) {

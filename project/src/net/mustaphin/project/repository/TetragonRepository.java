@@ -5,9 +5,8 @@
  */
 package net.mustaphin.project.repository;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import net.mustaphin.project.shape.Tetragon;
 
 /**
@@ -16,7 +15,7 @@ import net.mustaphin.project.shape.Tetragon;
  */
 public class TetragonRepository {
 
-    private Map<Integer, Tetragon> repository = new HashMap<>();
+    private List<Tetragon> repository = new ArrayList<>();
 
     private TetragonRepository() {
     }
@@ -27,8 +26,9 @@ public class TetragonRepository {
 	return INSTANSE;
     }
 
-    public void addShape(Tetragon tetragon) {
-	// TODO
+    public int addShape(Tetragon tetragon) {
+	repository.add(tetragon);
+	return repository.size() - 1;
     }
 
     public void removeShape(Tetragon tetragon) {
@@ -37,11 +37,6 @@ public class TetragonRepository {
 
     public void updateShape(Tetragon tetragon) {
 	// TODO
-    }
-
-    public int getNextId() {
-	
-	return 0; //TODO
     }
 
     public List<Tetragon> query(ISpecification specification) {
