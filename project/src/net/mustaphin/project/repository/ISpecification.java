@@ -14,5 +14,5 @@ import net.mustaphin.project.shape.Tetragon;
  */
 public interface ISpecification {
 
-    public List<Tetragon> find();
+    public List<Tetragon> specified();
 }
