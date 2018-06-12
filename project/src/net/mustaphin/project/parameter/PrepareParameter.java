@@ -6,7 +6,6 @@
 package net.mustaphin.project.parameter;
 
 import net.mustaphin.project.action.area.Area;
-import net.mustaphin.project.action.area.area_factory.AbstractAreaFactory;
 import net.mustaphin.project.action.particular.Particular;
 import net.mustaphin.project.action.particular.specifier_factory.AbstractFactoryParticular;
 import net.mustaphin.project.constant.ShapeType;
@@ -35,8 +34,7 @@ public class PrepareParameter {
 	return specifier.clarify(this);
     }
 
-    public double findArea(AbstractAreaFactory areaFactory) {
-	Area area = areaFactory.createArea();
+    public double findArea(Area area) {
 	return area.calc(point);
     }
 

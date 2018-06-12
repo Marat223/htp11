@@ -9,20 +9,20 @@ package net.mustaphin.project.custom_excepoin;
  *
  * @author marat
  */
-public class IncorrectDataHandle extends Exception {
+public class IncorrectDataHandleException extends Exception {
 
-    public IncorrectDataHandle() {
+    public IncorrectDataHandleException() {
     }
 
-    public IncorrectDataHandle(String message) {
+    public IncorrectDataHandleException(String message) {
 	super(message);
     }
 
-    public IncorrectDataHandle(String message, Throwable cause) {
+    public IncorrectDataHandleException(String message, Throwable cause) {
 	super(message, cause);
     }
 
-    public IncorrectDataHandle(Throwable cause) {
+    public IncorrectDataHandleException(Throwable cause) {
 	super(cause);
     }
 

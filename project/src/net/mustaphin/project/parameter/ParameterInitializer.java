@@ -7,17 +7,17 @@ package net.mustaphin.project.parameter;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.mustaphin.project.action.area.area_factory.AbstractAreaFactory;
-import net.mustaphin.project.action.area.area_factory.RhombAreaFactory;
-import net.mustaphin.project.action.area.area_factory.SquareAreaFactory;
-import net.mustaphin.project.action.area.area_factory.TrapezeAreaFactory;
+import net.mustaphin.project.action.area.Area;
+import net.mustaphin.project.action.area.RhombArea;
+import net.mustaphin.project.action.area.SquareArea;
+import net.mustaphin.project.action.area.TrapezeArea;
 import net.mustaphin.project.action.natural_tetragon.NaturalTetragon;
-import net.mustaphin.project.action.perimeter.CalcPerimeter;
 import net.mustaphin.project.action.particular.ConvexParticular;
 import net.mustaphin.project.action.particular.specifier_factory.AbstractFactoryParticular;
 import net.mustaphin.project.action.particular.specifier_factory.RhombFactroryParticular;
 import net.mustaphin.project.action.particular.specifier_factory.SquareFactoryParticular;
 import net.mustaphin.project.action.particular.specifier_factory.TrapezeFactroryParticular;
+import net.mustaphin.project.action.perimeter.CalcPerimeter;
 import net.mustaphin.project.shape.Point;
 
 /**
@@ -61,25 +61,25 @@ public class ParameterInitializer {
     }
 
     private void findSquare(GeometricalParameter parameter, PrepareParameter prepare) {
-	AbstractAreaFactory areaFactory = null;
+	Area area = null;
 	switch (parameter.getType()) {
 	    case RHOMB:
-		areaFactory = new RhombAreaFactory();
+		area = new RhombArea();
 		break;
 	    case SQUARE:
-		areaFactory = new SquareAreaFactory();
+		area = new SquareArea();
 		break;
 	    case TRAPEZE:
-		areaFactory = new TrapezeAreaFactory();
+		area = new TrapezeArea();
 		break;
 	    default:
 		// TODO бросить исключение
 		break;
 	}
-	parameter.setArea(prepare.findArea(areaFactory));
+	parameter.setArea(prepare.findArea(area));
     }
-    
-    private void findPerimeter(GeometricalParameter parameter, PrepareParameter prepare){
+
+    private void findPerimeter(GeometricalParameter parameter, PrepareParameter prepare) {
 	parameter.setPerimeter(CalcPerimeter.calc(prepare.getSide()));
     }
 }
