@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.naturalTetragon;
+package net.mustaphin.project.action.natural_tetragon;
 
 import net.mustaphin.project.shape.Point;
 

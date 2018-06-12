@@ -21,7 +21,7 @@ public class TetragonRepository {
 	return SingletonHolder.INSTANCE;
     }
 
-    private Comparator<Tetragon> comparator;
+    private Comparator<Tetragon> comparator;///////
 
     private List<Tetragon> repository = new ArrayList<>();
 

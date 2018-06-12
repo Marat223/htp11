@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.area.areaFactory;
+package net.mustaphin.project.action.particular.specifier_factory;
 
-import net.mustaphin.project.action.area.Area;
+import net.mustaphin.project.action.particular.Particular;
 
 /**
  *
  * @author marat
  */
-public abstract class AbstractAreaFactory {
+public abstract class AbstractFactoryParticular {
 
-    public abstract Area createArea();
+    public abstract Particular createParticular();
 }

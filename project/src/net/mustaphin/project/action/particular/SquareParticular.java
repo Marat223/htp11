@@ -5,8 +5,8 @@
  */
 package net.mustaphin.project.action.particular;
 
-import net.mustaphin.project.parameter.PrepareParameter;
 import net.mustaphin.project.constant.ShapeType;
+import net.mustaphin.project.parameter.PrepareParameter;
 
 /**
  *
@@ -28,7 +28,7 @@ http://begin.of.search
 	    for (int k = i; k > 0; k--) {
 		if (specs[k] != specs[k - 1]) {
 		    result = false;
-		    break http;
+		    break ;
 		}
 	    }
 	}

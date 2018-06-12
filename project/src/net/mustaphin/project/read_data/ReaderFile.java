@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.readData;
+package net.mustaphin.project.read_data;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import net.mustaphin.project.customExcepoin.WrongInputFileException;
+import net.mustaphin.project.custom_excepoin.WrongInputFileException;
 
 /**
  *

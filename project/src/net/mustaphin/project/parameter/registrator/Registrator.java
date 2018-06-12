@@ -16,12 +16,12 @@ import net.mustaphin.project.parameter.GeometricalParameter;
 public class Registrator {
 
     private final static Registrator INSTANCE = new Registrator();
-
+  private List<GeometricalParameter> parameters = new ArrayList<>();
     public static Registrator getINSTANCE() {
 	return INSTANCE;
     }
 
-    private List<GeometricalParameter> parameters = new ArrayList<>();
+  
 
     private Registrator() {
     }

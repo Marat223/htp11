@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.particular.specifierFactory;
+package net.mustaphin.project.action.particular.specifier_factory;
 
 import net.mustaphin.project.action.particular.Particular;
 import net.mustaphin.project.action.particular.SquareParticular;

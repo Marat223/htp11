@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.comparatorTetragon;
+package net.mustaphin.project.comparator_tetragon;
 
 import java.util.Comparator;
 import net.mustaphin.project.parameter.GeometricalParameter;

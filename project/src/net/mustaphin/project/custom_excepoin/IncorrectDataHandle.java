@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.customExcepoin;
+package net.mustaphin.project.custom_excepoin;
 
 /**
  *

@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.particular.specifierFactory;
+package net.mustaphin.project.action.particular.specifier_factory;
 
+import net.mustaphin.project.action.particular.RhombParticular;
 import net.mustaphin.project.action.particular.Particular;
-import net.mustaphin.project.action.particular.TrapezeParticular;
 
 /**
  *
  * @author marat
  */
-public class TrapezeFactroryParticular extends AbstractFactoryParticular {
+public class RhombFactroryParticular extends AbstractFactoryParticular {
 
     @Override
     public Particular createParticular() {
-	return new TrapezeParticular();
+	return new RhombParticular();
     }
 
 }

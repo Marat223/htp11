@@ -7,17 +7,17 @@ package net.mustaphin.project.parameter;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.mustaphin.project.action.area.areaFactory.AbstractAreaFactory;
-import net.mustaphin.project.action.area.areaFactory.RhombAreaFactory;
-import net.mustaphin.project.action.area.areaFactory.SquareAreaFactory;
-import net.mustaphin.project.action.area.areaFactory.TrapezeAreaFactory;
-import net.mustaphin.project.action.naturalTetragon.NaturalTetragon;
+import net.mustaphin.project.action.area.area_factory.AbstractAreaFactory;
+import net.mustaphin.project.action.area.area_factory.RhombAreaFactory;
+import net.mustaphin.project.action.area.area_factory.SquareAreaFactory;
+import net.mustaphin.project.action.area.area_factory.TrapezeAreaFactory;
+import net.mustaphin.project.action.natural_tetragon.NaturalTetragon;
 import net.mustaphin.project.action.perimeter.CalcPerimeter;
 import net.mustaphin.project.action.particular.ConvexParticular;
-import net.mustaphin.project.action.particular.specifierFactory.AbstractFactoryParticular;
-import net.mustaphin.project.action.particular.specifierFactory.RhombFactroryParticular;
-import net.mustaphin.project.action.particular.specifierFactory.SquareFactoryParticular;
-import net.mustaphin.project.action.particular.specifierFactory.TrapezeFactroryParticular;
+import net.mustaphin.project.action.particular.specifier_factory.AbstractFactoryParticular;
+import net.mustaphin.project.action.particular.specifier_factory.RhombFactroryParticular;
+import net.mustaphin.project.action.particular.specifier_factory.SquareFactoryParticular;
+import net.mustaphin.project.action.particular.specifier_factory.TrapezeFactroryParticular;
 import net.mustaphin.project.shape.Point;
 
 /**

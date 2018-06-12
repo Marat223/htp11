@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.area.areaFactory;
+package net.mustaphin.project.action.area.area_factory;
 
 import net.mustaphin.project.action.area.Area;
 import net.mustaphin.project.action.area.TrapezeArea;

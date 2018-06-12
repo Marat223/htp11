@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.shape.creatorShape;
+package net.mustaphin.project.shape.creator_shape;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.mustaphin.project.customExcepoin.WrongInputFileException;
+import net.mustaphin.project.custom_excepoin.WrongInputFileException;
 import net.mustaphin.project.observer.Observer;
-import net.mustaphin.project.readData.sequence.Sequencer;
+import net.mustaphin.project.read_data.sequence.Sequencer;
 import net.mustaphin.project.repository.TetragonRepository;
 import net.mustaphin.project.shape.Point;
 import net.mustaphin.project.shape.Tetragon;

@@ -6,9 +6,9 @@
 package net.mustaphin.project.parameter;
 
 import net.mustaphin.project.action.area.Area;
-import net.mustaphin.project.action.area.areaFactory.AbstractAreaFactory;
+import net.mustaphin.project.action.area.area_factory.AbstractAreaFactory;
 import net.mustaphin.project.action.particular.Particular;
-import net.mustaphin.project.action.particular.specifierFactory.AbstractFactoryParticular;
+import net.mustaphin.project.action.particular.specifier_factory.AbstractFactoryParticular;
 import net.mustaphin.project.constant.ShapeType;
 import net.mustaphin.project.shape.Point;
 

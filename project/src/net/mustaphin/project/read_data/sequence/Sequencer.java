@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.readData.sequence;
+package net.mustaphin.project.read_data.sequence;
 
 import java.util.List;
-import net.mustaphin.project.customExcepoin.WrongInputFileException;
-import net.mustaphin.project.readData.LinesValidator;
-import net.mustaphin.project.readData.ParserLine;
-import net.mustaphin.project.readData.ReaderFile;
+import net.mustaphin.project.custom_excepoin.WrongInputFileException;
+import net.mustaphin.project.read_data.LinesValidator;
+import net.mustaphin.project.read_data.ParserLine;
+import net.mustaphin.project.read_data.ReaderFile;
 
 /**
  *
