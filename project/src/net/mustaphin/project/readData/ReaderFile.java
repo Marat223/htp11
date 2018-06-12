@@ -12,6 +12,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import net.mustaphin.project.customExcepoin.WrongInputFileException;
 
 /**
  *
@@ -19,7 +20,7 @@ import java.util.stream.Collectors;
  */
 public class ReaderFile {
 
-    public List<String> readParameters(String location) {
+    public List<String> readParameters(String location) throws WrongInputFileException {
 	Path path = Paths.get(location);
 	List<String> coordinates = new ArrayList<>();
 	try {
@@ -29,7 +30,7 @@ public class ReaderFile {
 		coordinates = Files.lines(Paths.get("D:/NetBeansProjects/htp11/project/src/net/mustaphin/project/files/coordinate.txt")).collect(Collectors.toList());//TODO redo to relative path
 	    }
 	} catch (IOException ex) {
-	    ex.printStackTrace();
+	    throw new WrongInputFileException("there is not exists default file", ex);
 	}
 	return coordinates;
     }
