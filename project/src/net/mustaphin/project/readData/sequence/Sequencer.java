@@ -6,9 +6,10 @@
 package net.mustaphin.project.readData.sequence;
 
 import java.util.List;
+import net.mustaphin.project.customExcepoin.WrongInputFileException;
+import net.mustaphin.project.readData.LinesValidator;
 import net.mustaphin.project.readData.ParserLine;
 import net.mustaphin.project.readData.ReaderFile;
-import net.mustaphin.project.readData.LinesValidator;
 
 /**
  *
@@ -16,7 +17,7 @@ import net.mustaphin.project.readData.LinesValidator;
  */
 public class Sequencer {
 
-    public static List<String[]> sequenceInputData(String path) {
+    public static List<String[]> sequenceInputData(String path) throws WrongInputFileException {
 	ReaderFile reader = new ReaderFile();
 	List<String> raw = reader.readParameters(path); //будет использован файл по-умолчанию
 	ParserLine parser = new ParserLine();

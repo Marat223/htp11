@@ -7,6 +7,7 @@ package net.mustaphin.project.shape.creatorShape;
 
 import java.util.ArrayList;
 import java.util.List;
+import net.mustaphin.project.customExcepoin.WrongInputFileException;
 import net.mustaphin.project.observer.Observer;
 import net.mustaphin.project.readData.sequence.Sequencer;
 import net.mustaphin.project.repository.TetragonRepository;
@@ -19,7 +20,7 @@ import net.mustaphin.project.shape.Tetragon;
  */
 public class TetragonsCreate {
 
-    public void create(String path, Observer observer) {
+    public void create(String path, Observer observer) throws WrongInputFileException {
 	TetragonRepository repository = TetragonRepository.getINSTANSE();
 	for (Point[] realPoints : stringToPoints(Sequencer.sequenceInputData(path))) {
 	    Tetragon tetragon = new Tetragon();
