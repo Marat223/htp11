@@ -21,7 +21,7 @@ import net.mustaphin.project.shape.Tetragon;
 public class TetragonsCreate {
 
     public void create(String path, Observer observer) throws WrongInputFileException {
-	TetragonRepository repository = TetragonRepository.getINSTANSE();
+	TetragonRepository repository = TetragonRepository.getINSTANSE();//TODO убрать автоматическое добавление фигур в репозиторий
 	for (Point[] realPoints : stringToPoints(Sequencer.sequenceInputData(path))) {
 	    Tetragon tetragon = new Tetragon();
 	    tetragon.setId(repository.addShape(tetragon));

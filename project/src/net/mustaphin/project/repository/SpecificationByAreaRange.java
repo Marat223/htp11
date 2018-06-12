@@ -28,7 +28,7 @@ public class SpecificationByAreaRange implements ISpecification {
     @Override
     public List<Tetragon> specified(List<Tetragon> repository) {
 	List<Tetragon> tetragons = new ArrayList<>();
-	Registrator registrator = Registrator.getINSTANCE();
+	Registrator registrator = Registrator.getInstance();
 	List<GeometricalParameter> parameters = registrator.getParameters();
 	for (GeometricalParameter parameter : parameters) {
 	    double square = parameter.getArea();

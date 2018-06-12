@@ -32,7 +32,7 @@ public class TetragonRepository {
 
     public void removeShape(Tetragon tetragon) {
 	int id = tetragon.getId();
-	Registrator.getINSTANCE().removeParameter(id);
+	Registrator.getInstance().removeParameter(id);
 	repository.remove(id);
     }
 

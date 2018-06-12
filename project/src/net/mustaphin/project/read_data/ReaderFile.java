@@ -20,12 +20,12 @@ import net.mustaphin.project.custom_excepoin.WrongInputFileException;
  */
 public class ReaderFile {
 
-    public List<String> readParameters(String location) throws WrongInputFileException {
-	Path path = Paths.get(location);
+    public List<String> readParameters(String fileDirectory) throws WrongInputFileException {
+	Path path = Paths.get(fileDirectory);
 	List<String> coordinates = new ArrayList<>();
 	try {
 	    if (Files.exists(path)) {
-		coordinates = Files.lines(Paths.get(location)).collect(Collectors.toList());
+		coordinates = Files.lines(Paths.get(fileDirectory)).collect(Collectors.toList());
 	    } else {
 		coordinates = Files.lines(Paths.get("./dataFile/coordinate.txt")).collect(Collectors.toList());//TODO redo to relative path
 	    }

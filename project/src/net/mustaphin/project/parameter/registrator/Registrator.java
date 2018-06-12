@@ -15,39 +15,38 @@ import net.mustaphin.project.parameter.GeometricalParameter;
  */
 public class Registrator {
 
-    private final static Registrator INSTANCE = new Registrator();
-  private List<GeometricalParameter> parameters = new ArrayList<>();
-    public static Registrator getINSTANCE() {
-	return INSTANCE;
-    }
+    private final static Registrator instance = new Registrator();
 
-  
+    public static Registrator getInstance() {
+	return instance;
+    }
+    private List<GeometricalParameter> PARAMETER = new ArrayList<>();//TOKNOW
 
     private Registrator() {
     }
 
     public List<GeometricalParameter> getParameters() {
-	return parameters; //FIX
+	return PARAMETER; //FIX
     }
 
     public void insertParameter(int id, GeometricalParameter external) {
-	if (null == parameters.get(id)) {
-	    parameters.add(id, external);
+	if (null == PARAMETER.get(id)) {
+	    PARAMETER.add(id, external);
 	} else {
-	    parameters.set(id, external);
+	    PARAMETER.set(id, external);
 	}
     }
 
     public int getId(GeometricalParameter parameter) {
-	return parameters.indexOf(parameter);
+	return PARAMETER.indexOf(parameter);
     }
 
     public GeometricalParameter getParameter(int id) {
-	return parameters.get(id);
+	return PARAMETER.get(id);
     }
 
     public void removeParameter(int id) {
-	parameters.remove(id);
+	PARAMETER.remove(id);
     }
 
 }

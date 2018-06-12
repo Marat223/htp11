@@ -17,9 +17,9 @@ import net.mustaphin.project.read_data.ReaderFile;
  */
 public class Sequencer {
 
-    public static List<String[]> sequenceInputData(String path) throws WrongInputFileException {
+    public static List<String[]> sequenceInputData(String fileDirectory) throws WrongInputFileException {
 	ReaderFile reader = new ReaderFile();
-	List<String> raw = reader.readParameters(path); //будет использован файл по-умолчанию
+	List<String> raw = reader.readParameters(fileDirectory); //будет использован файл по-умолчанию
 	ParserLine parser = new ParserLine();
 	List<String[]> parsed = parser.parseLine(raw, " ");
 	LinesValidator validator = new LinesValidator();

@@ -18,7 +18,7 @@ public class ComparatorTetragonByArea implements Comparator<Tetragon> {
 
     @Override
     public int compare(Tetragon o1, Tetragon o2) {
-	Registrator registrator = Registrator.getINSTANCE();
+	Registrator registrator = Registrator.getInstance();
 	GeometricalParameter parameter1 = registrator.getParameter(o1.getId());
 	GeometricalParameter parameter2 = registrator.getParameter(o2.getId());
 	double area1 = parameter1.getArea();

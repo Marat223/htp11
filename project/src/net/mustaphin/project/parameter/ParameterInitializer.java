@@ -13,10 +13,10 @@ import net.mustaphin.project.action.area.SquareArea;
 import net.mustaphin.project.action.area.TrapezeArea;
 import net.mustaphin.project.action.natural_tetragon.NaturalTetragon;
 import net.mustaphin.project.action.particular.ConvexParticular;
-import net.mustaphin.project.action.particular.specifier_factory.AbstractFactoryParticular;
-import net.mustaphin.project.action.particular.specifier_factory.RhombFactroryParticular;
-import net.mustaphin.project.action.particular.specifier_factory.SquareFactoryParticular;
-import net.mustaphin.project.action.particular.specifier_factory.TrapezeFactroryParticular;
+import net.mustaphin.project.action.particular.Particular;
+import net.mustaphin.project.action.particular.RhombParticular;
+import net.mustaphin.project.action.particular.SquareParticular;
+import net.mustaphin.project.action.particular.TrapezeParticular;
 import net.mustaphin.project.action.perimeter.CalcPerimeter;
 import net.mustaphin.project.shape.Point;
 
@@ -48,12 +48,12 @@ public class ParameterInitializer {
     }
 
     private void checkType(GeometricalParameter parameter, PrepareParameter prepare) {
-	List<AbstractFactoryParticular> factorySpecifier = new ArrayList<>();
-	factorySpecifier.add(new RhombFactroryParticular());
-	factorySpecifier.add(new SquareFactoryParticular());
-	factorySpecifier.add(new TrapezeFactroryParticular());
-	for (AbstractFactoryParticular specifier : factorySpecifier) {
-	    if (prepare.checkSpecification(specifier)) {
+	List<Particular> particulars = new ArrayList<>();
+	particulars.add(new RhombParticular());
+	particulars.add(new SquareParticular());
+	particulars.add(new TrapezeParticular());
+	for (Particular particular : particulars) {
+	    if (prepare.checkSpecification(particular)) {
 		parameter.setType(prepare.getShapeType());
 		break;
 	    }
