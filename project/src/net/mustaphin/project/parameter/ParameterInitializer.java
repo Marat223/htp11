@@ -53,7 +53,7 @@ public class ParameterInitializer {
 	particulars.add(new SquareParticular());
 	particulars.add(new TrapezeParticular());
 	for (Particular particular : particulars) {
-	    if (prepare.checkSpecification(particular)) {
+	    if (prepare.checkParticular(particular)) {
 		parameter.setType(prepare.getShapeType());
 		break;
 	    }

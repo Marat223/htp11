@@ -22,16 +22,13 @@ public class SquareParticular extends Particular {
     }
 
     private boolean checkSpecs(double specs[]) {
-	boolean result = true;
-http://begin.of.search
 	for (int i = 0; i < specs.length - 1; i++) {
 	    for (int k = i; k > 0; k--) {
 		if (specs[k] != specs[k - 1]) {
-		    result = false;
-		    break ;
+		    return false;
 		}
 	    }
 	}
-	return result;
+	return true;
     }
 }

@@ -14,7 +14,7 @@ import net.mustaphin.project.shape.Point;
  *
  * @author marat
  */
-public class PrepareParameter {
+public class PrepareParameter {//TODO разбросать по классам
 
     private double[] side = new double[4];
     private double[] cos = new double[4];
@@ -27,7 +27,7 @@ public class PrepareParameter {
 	this.point = point;
     }
 
-    public boolean checkSpecification(Particular particular) {
+    public boolean checkParticular(Particular particular) {
 	shapeType = particular.getType();
 	return particular.clarify(this);
     }

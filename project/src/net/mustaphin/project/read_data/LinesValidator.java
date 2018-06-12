@@ -19,8 +19,8 @@ public class LinesValidator {
 
     public List<String[]> validateDetached(List<String[]> detached, int amount) {//amount 8 если четырёхугольник
 	List<String[]> validated = new ArrayList<>();
-	Pattern pattern = Pattern.compile(CoordinateRegular.SAMPLE);// [\\d]+\\.[\\d]+
-http://search.of.correct
+	Pattern pattern = Pattern.compile(CoordinateRegular.COORDINATE);// [\\d]+\\.[\\d]+
+http://search.of.correct //TODO избавиться от метки
 	for (String[] pack : detached) {
 	    if (pack.length != amount) {
 		continue;//TODO добавить запись события в лог

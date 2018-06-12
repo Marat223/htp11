@@ -8,8 +8,8 @@ package net.mustaphin.project.action.particular;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-import net.mustaphin.project.parameter.PrepareParameter;
 import net.mustaphin.project.constant.ShapeType;
+import net.mustaphin.project.parameter.PrepareParameter;
 
 /**
  *
@@ -29,7 +29,7 @@ public class TrapezeParticular extends Particular {
 	for (int i = 0; i < type.length; i++) {
 	    List<Integer> current = Arrays.asList(type[i][0], type[i][1], type[i][2], type[i][3]);
 	    Iterator<Integer> corner = current.iterator();
-http://start.of.searh
+http://start.of.searh //TODO избавиться от метки
 	    for (int angle : cornerType) {
 		while (corner.hasNext()) {
 		    Integer next = corner.next();
