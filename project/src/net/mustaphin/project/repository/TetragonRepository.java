@@ -8,7 +8,6 @@ package net.mustaphin.project.repository;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import net.mustaphin.project.comparatorTetragon.ComparatorTetragonBy1stPointY;
 import net.mustaphin.project.parameter.registrator.Registrator;
 import net.mustaphin.project.shape.Tetragon;
 
@@ -29,8 +28,14 @@ public class TetragonRepository {
     private TetragonRepository() {
     }
 
-    public Comparator<Tetragon> getComparator() {
-	return comparator;
+    public void setComparator(Comparator<Tetragon> comparator) {
+	this.comparator = comparator;
+    }
+
+    public void removeComparator() {
+	if (null != comparator) {
+	    this.comparator = null;
+	}
     }
 
     public int addShape(Tetragon tetragon) {
@@ -56,7 +61,7 @@ public class TetragonRepository {
     public List<Tetragon> query(ISpecification specification) {
 	List<Tetragon> tetragons = specification.specified(repository);
 	if (null != comparator) {
-	    tetragons.sort(new ComparatorTetragonBy1stPointY());
+	    tetragons.sort(comparator);
 	}
 	return specification.specified(repository);
     }
