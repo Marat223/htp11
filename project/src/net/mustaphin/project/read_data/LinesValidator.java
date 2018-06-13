@@ -20,19 +20,19 @@ public class LinesValidator {
     public List<String[]> validateDetached(List<String[]> detached, int amount) {//amount 8 если четырёхугольник
 	List<String[]> validated = new ArrayList<>();
 	Pattern pattern = Pattern.compile(CoordinateRegular.COORDINATE);// [\\d]+\\.[\\d]+
-http://search.of.correct //TODO избавиться от метки
 	for (String[] pack : detached) {
 	    if (pack.length != amount) {
 		continue;//TODO добавить запись события в лог
 	    }
 	    for (String single : pack) {
 		Matcher matcher = pattern.matcher(single);
-		if (!matcher.find()) {
-		    continue http;//TODO добавить запись события в лог
+		if (matcher.find()) {
+		    validated.add(pack);
+		    break;
 		}
 	    }
-	    validated.add(pack);
 	}
 	return validated;
     }
+
 }

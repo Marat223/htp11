@@ -29,15 +29,8 @@ public class TrapezeParticular extends Particular {
 	for (int i = 0; i < type.length; i++) {
 	    List<Integer> current = Arrays.asList(type[i][0], type[i][1], type[i][2], type[i][3]);
 	    Iterator<Integer> corner = current.iterator();
-http://start.of.searh //TODO избавиться от метки
 	    for (int angle : cornerType) {
-		while (corner.hasNext()) {
-		    Integer next = corner.next();
-		    if (next == angle) {
-			corner.remove();
-			continue http;
-		    }
-		}
+		checkSingleCorner(angle, corner);
 	    }
 	    if (current.isEmpty()) {
 		result = true;
@@ -45,6 +38,16 @@ http://start.of.searh //TODO избавиться от метки
 	    }
 	}
 	return result;
+    }
+
+    private void checkSingleCorner(int angle, Iterator<Integer> corner) {
+	while (corner.hasNext()) {
+	    Integer next = corner.next();
+	    if (next == angle) {
+		corner.remove();
+		break;
+	    }
+	}
     }
 
     public int[] cornerType(double cos[]) { //косинус больше нуля -угол острый
