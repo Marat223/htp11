@@ -6,6 +6,7 @@
 package net.mustaphin.project.repository;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import net.mustaphin.project.parameter.registrator.Registrator;
 import net.mustaphin.project.shape.Tetragon;
@@ -47,6 +48,10 @@ public class TetragonRepository {
 
     public List<Tetragon> query(ISpecification specification) {
 	return specification.specified(repository);
+    }
+    
+    public void sort(Comparator<Tetragon> comparator){
+	repository.sort(comparator);
     }
 
     private static class SingletonHolder {
