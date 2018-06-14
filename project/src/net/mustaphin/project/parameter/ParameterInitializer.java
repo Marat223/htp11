@@ -26,7 +26,7 @@ import net.mustaphin.project.shape.Point;
  */
 public class ParameterInitializer {
 
-    public GeometricalParameter initialize(Point point[]) {
+    public GeometricalParameter operate(Point point[]) {
 	GeometricalParameter parameter = new GeometricalParameter();
 	PrepareParameter prepare = new PrepareParameter(point);
 	checkNatural(point, parameter);

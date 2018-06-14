@@ -23,7 +23,6 @@ public class Tetragon {
 
     public Tetragon(Point point[]) {
 	this.point = point;
-	notifyObserver();
     }
 
     public Tetragon() {
@@ -69,11 +68,6 @@ public class Tetragon {
 	return this.point[position];
     }
 
-    public void init(Point[] point) {
-	this.point = point;
-	notifyObserver();
-    }
-
     public void setPoint(int position, Point point) {
 	this.point[position] = point;
 	notifyObserver();
@@ -96,7 +90,6 @@ public class Tetragon {
 	int hash = 3;
 	hash = 29 * hash + Arrays.deepHashCode(this.point);
 	hash = 29 * hash + Objects.hashCode(this.observer);
-	hash = 29 * hash + this.id;
 	hash = 29 * hash + Objects.hashCode(this.name);
 	return hash;
     }
