@@ -14,7 +14,15 @@ import net.mustaphin.project.shape.Point;
  *
  * @author marat
  */
-public class PrepareParameter {//TODO разбросать по классам
+public class PrepareParameter {public static double[] findSides(Point point[]) {
+    double side[] = new double[point.length];
+    for (int i = 0; i < side.length; i++) {
+	int k = (i + 1 == side.length) ? 0 : i + 1;
+	side[i] = Math.hypot(point[i].getX() - point[k].getX(), point[i].getY() - point[k].getY());
+    }
+    return side;
+}
+//TODO разбросать по классам
 
     private double[] side = new double[4];
     private double[] cos = new double[4];
@@ -36,14 +44,6 @@ public class PrepareParameter {//TODO разбросать по классам
 	return area.calc(point);
     }
 
-    public static double[] findSides(Point point[]) {
-	double side[] = new double[point.length];
-	for (int i = 0; i < side.length; i++) {
-	    int k = (i + 1 == side.length) ? 0 : i + 1;
-	    side[i] = Math.hypot(point[i].getX() - point[k].getX(), point[i].getY() - point[k].getY());
-	}
-	return side;
-    }
 
     //передаваемые значения - стороны треугольника образованные от двух сторон прямоугольника и стороны противолежащей искомому углу
     public double findCos(double a, double b, double c) { //первым значением должна быть противолежащая искомому углу сторона

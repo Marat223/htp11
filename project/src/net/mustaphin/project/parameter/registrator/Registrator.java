@@ -5,8 +5,8 @@
  */
 package net.mustaphin.project.parameter.registrator;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import net.mustaphin.project.parameter.GeometricalParameter;
 
 /**
@@ -20,24 +20,19 @@ public class Registrator {
     public static Registrator getInstance() {
 	return instance;
     }
-    private final List<GeometricalParameter> parameter = new ArrayList<>();
+    private final Map<Integer, GeometricalParameter> parameter = new HashMap<>();
 
     private Registrator() {
     }
 
-    public List<GeometricalParameter> getParameters() {
-	return parameter; //TODO убрать возврат всей коллекции
-    }
-
     public void insertParameter(int id, GeometricalParameter external) {//TODO заменить на Map
-	if (null == parameter.get(id)) {
-	    parameter.add(id, external);
-	} else {
-	    parameter.set(id, external);
-	}
+	parameter.put(id, external);
     }
 
     public int getId(GeometricalParameter externalParameter) {
+	for(){
+	    
+	}
 	return parameter.indexOf(externalParameter);
     }
 

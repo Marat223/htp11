@@ -7,6 +7,7 @@ package net.mustaphin.project.repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import net.mustaphin.project.parameter.GeometricalParameter;
 import net.mustaphin.project.parameter.registrator.Registrator;
 import net.mustaphin.project.shape.Tetragon;
@@ -29,7 +30,8 @@ public class SpecificationByAreaRange implements ISpecification {
     public List<Tetragon> specified(List<Tetragon> repository) {
 	List<Tetragon> tetragons = new ArrayList<>();
 	Registrator registrator = Registrator.getInstance();
-	List<GeometricalParameter> parameters = registrator.getParameters();
+	Map<Integer, GeometricalParameter> parameters = registrator.getParameters();
+	
 	for (GeometricalParameter parameter : parameters) {
 	    double square = parameter.getArea();
 	    if (min < square && max > square) {
