@@ -20,33 +20,33 @@ public class Registrator {
     public static Registrator getInstance() {
 	return instance;
     }
-    private List<GeometricalParameter> PARAMETER = new ArrayList<>();//TOKNOW
+    private final List<GeometricalParameter> parameter = new ArrayList<>();
 
     private Registrator() {
     }
 
     public List<GeometricalParameter> getParameters() {
-	return PARAMETER; //FIX
+	return parameter; //TODO убрать возврат всей коллекции
     }
 
-    public void insertParameter(int id, GeometricalParameter external) {
-	if (null == PARAMETER.get(id)) {
-	    PARAMETER.add(id, external);
+    public void insertParameter(int id, GeometricalParameter external) {//TODO заменить на Map
+	if (null == parameter.get(id)) {
+	    parameter.add(id, external);
 	} else {
-	    PARAMETER.set(id, external);
+	    parameter.set(id, external);
 	}
     }
 
-    public int getId(GeometricalParameter parameter) {
-	return PARAMETER.indexOf(parameter);
+    public int getId(GeometricalParameter externalParameter) {
+	return parameter.indexOf(externalParameter);
     }
 
     public GeometricalParameter getParameter(int id) {
-	return PARAMETER.get(id);
+	return parameter.get(id);
     }
 
     public void removeParameter(int id) {
-	PARAMETER.remove(id);
+	parameter.remove(id);
     }
 
 }

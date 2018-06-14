@@ -10,7 +10,6 @@ import java.util.List;
 import net.mustaphin.project.custom_excepoin.WrongInputFileException;
 import net.mustaphin.project.observer.Observer;
 import net.mustaphin.project.read_data.sequence.Sequencer;
-import net.mustaphin.project.repository.TetragonRepository;
 import net.mustaphin.project.shape.Point;
 import net.mustaphin.project.shape.Tetragon;
 
@@ -20,20 +19,16 @@ import net.mustaphin.project.shape.Tetragon;
  */
 public class TetragonCreate {
 
-    public void create(String path, Observer observer) throws WrongInputFileException {
-	TetragonRepository repository = TetragonRepository.getINSTANSE();//TODO убрать автоматическое добавление фигур в репозиторий
+    public List<Tetragon> create(String path, Observer observer) throws WrongInputFileException {
+	List<Tetragon> allCreatedTetragons = new ArrayList<>();
 	for (Point[] realPoints : stringToPoints(Sequencer.sequenceInputData(path))) {
 	    Tetragon tetragon = new Tetragon(realPoints);
 	    tetragon.setId(tetragon.hashCode());
-	    //repository.addShape(tetragon)
+	    allCreatedTetragons.add(tetragon);
 	    tetragon.addObserver(observer);
 	    tetragon.notifyObserver();
 	}
-    }
-
-    private int idGenerate() {
-
-	return 0;
+	return allCreatedTetragons;
     }
 
     public List<Point[]> stringToPoints(List<String[]> stringCoordinate) {
