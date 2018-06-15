@@ -31,7 +31,7 @@ public class TetragonRepository {
 
     public int addShape(Tetragon tetragon) throws RepositoryException {
 	if (repository.contains(tetragon)) {
-	    throw new RepositoryException();
+	    throw new RepositoryException("there is already exsists figure in repository");
 	}
 	repository.add(tetragon);
 	return repository.indexOf(tetragon);
@@ -48,13 +48,14 @@ public class TetragonRepository {
 	}
     }
 
-    public void updateShape(Tetragon tetragon) {
+    public void updateShape(Tetragon tetragon)throws RepositoryException {
 	for (Tetragon internal : repository) {
 	    if (internal.equals(tetragon)) {
 		internal.setPoints(tetragon.getPoint());
 		break;
 	    }
 	}
+	throw new RepositoryException("there is not exsists that figure in repository");
     }
 
     public List<Tetragon> query(ISpecification specification) {

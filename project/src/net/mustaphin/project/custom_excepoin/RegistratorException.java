@@ -9,7 +9,7 @@ package net.mustaphin.project.custom_excepoin;
  *
  * @author marat
  */
-public class RegistratorException extends WrongFigureException {
+public class RegistratorException extends Exception {
 
     public RegistratorException() {
     }

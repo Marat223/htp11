@@ -40,8 +40,11 @@ public class Registrator {
 	throw new IncorrectGeometricalParameterException();
     }
 
-    public GeometricalParameter getParameter(int id) {
-	return parameter.get(id);
+    public GeometricalParameter getParameter(int id) throws RegistratorException {
+	if(null==parameter.get(id)){
+	    return parameter.get(id);
+	}
+	throw new RegistratorException("unsuccessful getting attemption - registrator does not contain a figure with this id");
     }
 
     public Map<Integer, GeometricalParameter> getParameters() {
@@ -50,7 +53,7 @@ public class Registrator {
 
     public void removeParameter(int id) throws RegistratorException {
 	if (null == parameter.remove(id)) {
-	    throw new RegistratorException("wrong figure id");
+	    throw new RegistratorException("unsuccessful removing attemption - wrong figure id");
 	}
     }
 

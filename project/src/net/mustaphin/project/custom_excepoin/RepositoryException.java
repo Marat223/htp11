@@ -9,7 +9,7 @@ package net.mustaphin.project.custom_excepoin;
  *
  * @author marat
  */
-public class RepositoryException extends WrongFigureException {
+public class RepositoryException extends Exception {
 
     public RepositoryException() {
     }
