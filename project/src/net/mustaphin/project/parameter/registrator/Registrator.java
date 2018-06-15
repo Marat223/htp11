@@ -30,14 +30,21 @@ public class Registrator {
     }
 
     public int getId(GeometricalParameter externalParameter) {
-	for(){
-	    
+	int id = -1;
+	for (Map.Entry<Integer, GeometricalParameter> couple : parameter.entrySet()) {
+	    if (externalParameter.equals(couple.getValue())) {
+		id = couple.getKey();
+	    }
 	}
-	return parameter.indexOf(externalParameter);
+	return id;
     }
 
     public GeometricalParameter getParameter(int id) {
 	return parameter.get(id);
+    }
+
+    public Map<Integer, GeometricalParameter> getParameters() {
+	return new HashMap<>(parameter);
     }
 
     public void removeParameter(int id) {

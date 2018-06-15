@@ -18,7 +18,6 @@ public class Tetragon {
     private Point point[] = new Point[4];
 
     private Observer observer;
-    private int id;
     private String name;
 
     public Tetragon(Point point[]) {
@@ -34,14 +33,6 @@ public class Tetragon {
 
     public void setObserver(Observer observer) {
 	this.observer = observer;
-    }
-
-    public int getId() {
-	return id;
-    }
-
-    public void setId(int id) {
-	this.id = id;
     }
 
     public void addObserver(Observer observer) {
@@ -106,9 +97,6 @@ public class Tetragon {
 	    return false;
 	}
 	final Tetragon other = (Tetragon) obj;
-	if (this.id != other.id) {
-	    return false;
-	}
 	if (!Objects.equals(this.name, other.name)) {
 	    return false;
 	}
@@ -123,7 +111,7 @@ public class Tetragon {
 
     @Override
     public String toString() {
-	return "Tetragon{" + "point=" + point + ", observer=" + observer + ", id=" + id + ", name=" + name + '}';
+	return "Tetragon{" + "point=" + point + ", observer=" + observer + ", name=" + name + '}';
     }
 
 }

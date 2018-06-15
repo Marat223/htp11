@@ -31,12 +31,12 @@ public class SpecificationByAreaRange implements ISpecification {
 	List<Tetragon> tetragons = new ArrayList<>();
 	Registrator registrator = Registrator.getInstance();
 	Map<Integer, GeometricalParameter> parameters = registrator.getParameters();
-	
-	for (GeometricalParameter parameter : parameters) {
-	    double square = parameter.getArea();
+	for (Map.Entry<Integer, GeometricalParameter> couple : parameters.entrySet()) {
+	    double square = couple.getValue().getArea();
 	    if (min < square && max > square) {
-		int id = registrator.getId(parameter);
-		tetragons.add(repository.get(id));
+		int id = registrator.getId(couple.getValue());
+		List<Tetragon> specified = new SpecificationById(id).specified(repository);
+		tetragons.addAll(specified);
 	    }
 	}
 	return tetragons;

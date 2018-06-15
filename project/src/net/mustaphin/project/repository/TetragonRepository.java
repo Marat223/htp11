@@ -32,9 +32,8 @@ public class TetragonRepository {
     }
 
     public void removeShape(Tetragon tetragon) {
-	int id = tetragon.getId();
-	Registrator.getInstance().removeParameter(id);
-	repository.remove(id);
+	Registrator.getInstance().removeParameter(tetragon.hashCode());
+	repository.remove(tetragon);
     }
 
     public void updateShape(Tetragon tetragon) {
@@ -49,8 +48,8 @@ public class TetragonRepository {
     public List<Tetragon> query(ISpecification specification) {
 	return specification.specified(repository);
     }
-    
-    public void sort(Comparator<Tetragon> comparator){
+
+    public void sort(Comparator<Tetragon> comparator) {
 	repository.sort(comparator);
     }
 

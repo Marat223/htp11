@@ -16,7 +16,7 @@ public class ComparatorTetragonById implements Comparator<Tetragon> {
 
     @Override
     public int compare(Tetragon o1, Tetragon o2) {
-	return o1.getId() - o2.getId();
+	return o1.hashCode() - o2.hashCode();
     }
 
 }
