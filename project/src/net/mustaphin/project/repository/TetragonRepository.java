@@ -8,6 +8,9 @@ package net.mustaphin.project.repository;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import net.mustaphin.project.custom_excepoin.RegistratorException;
+import net.mustaphin.project.custom_excepoin.RepositoryException;
+import net.mustaphin.project.custom_excepoin.WrongFigureException;
 import net.mustaphin.project.parameter.registrator.Registrator;
 import net.mustaphin.project.shape.Tetragon;
 
@@ -26,14 +29,23 @@ public class TetragonRepository {
     private TetragonRepository() {
     }
 
-    public int addShape(Tetragon tetragon) {
+    public int addShape(Tetragon tetragon) throws RepositoryException {
+	if (repository.contains(tetragon)) {
+	    throw new RepositoryException();
+	}
 	repository.add(tetragon);
 	return repository.indexOf(tetragon);
     }
 
-    public void removeShape(Tetragon tetragon) {
-	Registrator.getInstance().removeParameter(tetragon.hashCode());
-	repository.remove(tetragon);
+    public void removeShape(Tetragon tetragon) throws WrongFigureException {
+	try {
+	    Registrator.getInstance().removeParameter(tetragon.hashCode());
+	    if (repository.remove(tetragon)) {
+		throw new RepositoryException("there is not exsists that figure in repository");
+	    }
+	} catch (RegistratorException | RepositoryException ex) {
+	    throw new WrongFigureException(ex);
+	}
     }
 
     public void updateShape(Tetragon tetragon) {

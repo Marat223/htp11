@@ -7,6 +7,8 @@ package net.mustaphin.project.parameter.registrator;
 
 import java.util.HashMap;
 import java.util.Map;
+import net.mustaphin.project.custom_excepoin.IncorrectGeometricalParameterException;
+import net.mustaphin.project.custom_excepoin.RegistratorException;
 import net.mustaphin.project.parameter.GeometricalParameter;
 
 /**
@@ -29,14 +31,13 @@ public class Registrator {
 	parameter.put(id, external);
     }
 
-    public int getId(GeometricalParameter externalParameter) {
-	int id = -1;
+    public int getId(GeometricalParameter externalParameter) throws IncorrectGeometricalParameterException {
 	for (Map.Entry<Integer, GeometricalParameter> couple : parameter.entrySet()) {
 	    if (externalParameter.equals(couple.getValue())) {
-		id = couple.getKey();
+		return couple.getKey();
 	    }
 	}
-	return id;
+	throw new IncorrectGeometricalParameterException();
     }
 
     public GeometricalParameter getParameter(int id) {
@@ -47,8 +48,10 @@ public class Registrator {
 	return new HashMap<>(parameter);
     }
 
-    public void removeParameter(int id) {
-	parameter.remove(id);
+    public void removeParameter(int id) throws RegistratorException {
+	if (null == parameter.remove(id)) {
+	    throw new RegistratorException("wrong figure id");
+	}
     }
 
 }

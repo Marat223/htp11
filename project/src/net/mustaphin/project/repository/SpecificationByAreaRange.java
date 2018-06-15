@@ -8,6 +8,9 @@ package net.mustaphin.project.repository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import net.mustaphin.project.custom_excepoin.IncorrectGeometricalParameterException;
 import net.mustaphin.project.parameter.GeometricalParameter;
 import net.mustaphin.project.parameter.registrator.Registrator;
 import net.mustaphin.project.shape.Tetragon;
@@ -34,9 +37,13 @@ public class SpecificationByAreaRange implements ISpecification {
 	for (Map.Entry<Integer, GeometricalParameter> couple : parameters.entrySet()) {
 	    double square = couple.getValue().getArea();
 	    if (min < square && max > square) {
-		int id = registrator.getId(couple.getValue());
-		List<Tetragon> specified = new SpecificationById(id).specified(repository);
-		tetragons.addAll(specified);
+		try {
+		    int id = registrator.getId(couple.getValue());
+		    List<Tetragon> specified = new SpecificationById(id).specified(repository);
+		    tetragons.addAll(specified);
+		} catch (IncorrectGeometricalParameterException ex) {
+		    Logger.getLogger(SpecificationByAreaRange.class.getName()).log(Level.SEVERE, null, ex);
+		}
 	    }
 	}
 	return tetragons;
