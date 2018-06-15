@@ -41,10 +41,10 @@ public class Registrator {
     }
 
     public GeometricalParameter getParameter(int id) throws RegistratorException {
-	if(null==parameter.get(id)){
+	if (null == parameter.get(id)) {
 	    return parameter.get(id);
 	}
-	throw new RegistratorException("unsuccessful getting attemption - registrator does not contain a figure with this id");
+	throw new RegistratorException("unsuccessful getting attemption - registrator does not contain a figure with id:" + id);
     }
 
     public Map<Integer, GeometricalParameter> getParameters() {
