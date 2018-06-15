@@ -22,7 +22,6 @@ public class PrepareParameter {public static double[] findSides(Point point[]) {
     }
     return side;
 }
-//TODO разбросать по классам
 
     private double[] side = new double[4];
     private double[] cos = new double[4];
@@ -43,7 +42,6 @@ public class PrepareParameter {public static double[] findSides(Point point[]) {
     public double findArea(Area area) {
 	return area.calc(point);
     }
-
 
     //передаваемые значения - стороны треугольника образованные от двух сторон прямоугольника и стороны противолежащей искомому углу
     public double findCos(double a, double b, double c) { //первым значением должна быть противолежащая искомому углу сторона

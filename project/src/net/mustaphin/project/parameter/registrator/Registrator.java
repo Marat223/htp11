@@ -25,7 +25,7 @@ public class Registrator {
     private Registrator() {
     }
 
-    public void insertParameter(int id, GeometricalParameter external) {//TODO заменить на Map
+    public void insertParameter(int id, GeometricalParameter external) {
 	parameter.put(id, external);
     }
 
