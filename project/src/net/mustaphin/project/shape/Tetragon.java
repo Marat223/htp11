@@ -27,14 +27,6 @@ public class Tetragon {
     public Tetragon() {
     }
 
-    public Observer getObserver() {
-	return observer;
-    }
-
-    public void setObserver(Observer observer) {
-	this.observer = observer;
-    }
-
     public void addObserver(Observer observer) {
 	this.observer = observer;
     }

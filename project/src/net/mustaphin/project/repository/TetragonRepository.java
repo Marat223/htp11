@@ -10,12 +10,15 @@ import java.util.Comparator;
 import java.util.List;
 import net.mustaphin.project.custom_excepoin.RepositoryException;
 import net.mustaphin.project.shape.Tetragon;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author marat
  */
 public class TetragonRepository {
+
+    static final Logger LOGGER = Logger.getLogger(TetragonRepository.class);
 
     public static TetragonRepository getINSTANSE() {
 	return SingletonHolder.INSTANCE;

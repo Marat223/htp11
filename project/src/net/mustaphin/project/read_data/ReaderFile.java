@@ -27,7 +27,7 @@ public class ReaderFile {
 	    if (Files.exists(path)) {
 		coordinates = Files.lines(Paths.get(fileDirectory)).collect(Collectors.toList());
 	    } else {
-		coordinates = Files.lines(Paths.get("./dataFile/coordinate.txt")).collect(Collectors.toList());
+		coordinates = Files.lines(Paths.get("./resources/coordinate.txt")).collect(Collectors.toList());
 	    }
 	} catch (IOException ex) {
 	    throw new WrongInputFileException("there is not exists default file", ex);
