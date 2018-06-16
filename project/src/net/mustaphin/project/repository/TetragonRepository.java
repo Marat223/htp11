@@ -10,6 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 import net.mustaphin.project.custom_excepoin.RepositoryException;
 import net.mustaphin.project.shape.Tetragon;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 /**
@@ -31,13 +32,20 @@ public class TetragonRepository {
 
     public int addShape(Tetragon tetragon) throws RepositoryException {
 	if (repository.contains(tetragon)) {
-	    throw new RepositoryException("there is already exsists figure in repository");
+	    RepositoryException exception = new RepositoryException("Figure is already in repository");
+	    LOGGER.log(Level.ERROR, tetragon, exception);
+	    throw exception;
 	}
 	repository.add(tetragon);
 	return repository.indexOf(tetragon);
     }
 
     public void removeShape(Tetragon tetragon) throws RepositoryException {
+	if (!repository.contains(tetragon)) {
+	    RepositoryException exception = new RepositoryException("Figure is not exsists in repository");
+	    LOGGER.log(Level.ERROR, tetragon, exception);
+	    throw exception;
+	}
 	repository.remove(tetragon);
     }
 
@@ -48,7 +56,9 @@ public class TetragonRepository {
 		break;
 	    }
 	}
-	throw new RepositoryException("there is not exsists that figure in repository");
+	RepositoryException exception = new RepositoryException("Figure is not exsists in repository");
+	LOGGER.log(Level.ERROR, tetragon, exception);
+	throw exception;
     }
 
     public List<Tetragon> query(ISpecification specification) {

@@ -14,14 +14,16 @@ import net.mustaphin.project.shape.Point;
  *
  * @author marat
  */
-public class PrepareParameter {public static double[] findSides(Point point[]) {
-    double side[] = new double[point.length];
-    for (int i = 0; i < side.length; i++) {
-	int k = (i + 1 == side.length) ? 0 : i + 1;
-	side[i] = Math.hypot(point[i].getX() - point[k].getX(), point[i].getY() - point[k].getY());
+public class PrepareParameter {
+
+    public static double[] findSides(Point point[]) {
+	double side[] = new double[point.length];
+	for (int i = 0; i < side.length; i++) {
+	    int k = (i + 1 == side.length) ? 0 : i + 1;
+	    side[i] = Math.hypot(point[i].getX() - point[k].getX(), point[i].getY() - point[k].getY());
+	}
+	return side;
     }
-    return side;
-}
 
     private double[] side = new double[4];
     private double[] cos = new double[4];
