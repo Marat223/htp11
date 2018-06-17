@@ -16,9 +16,9 @@ import org.testng.annotations.Test;
  *
  * @author marat
  */
-public class RhombAreaNGTest {
+public class SquareAreaNGTest {
     
-    public RhombAreaNGTest() {
+    public SquareAreaNGTest() {
     }
 
     @BeforeClass
@@ -33,7 +33,7 @@ public class RhombAreaNGTest {
     public void testCalc() {
 	System.out.println("calc");
 	Point[] point = null;
-	RhombArea instance = new RhombArea();
+	SquareArea instance = new SquareArea();
 	double expResult = 0.0;
 	double result = instance.calc(point);
 	assertEquals(result, expResult);

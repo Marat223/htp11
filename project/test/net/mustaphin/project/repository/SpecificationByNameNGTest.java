@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.area;
+package net.mustaphin.project.repository;
 
-import net.mustaphin.project.shape.Point;
+import java.util.List;
+import net.mustaphin.project.shape.Tetragon;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.fail;
 import org.testng.annotations.BeforeClass;
@@ -16,9 +17,9 @@ import org.testng.annotations.Test;
  *
  * @author marat
  */
-public class RhombAreaNGTest {
+public class SpecificationByNameNGTest {
     
-    public RhombAreaNGTest() {
+    public SpecificationByNameNGTest() {
     }
 
     @BeforeClass
@@ -30,12 +31,12 @@ public class RhombAreaNGTest {
     }
 
     @Test
-    public void testCalc() {
-	System.out.println("calc");
-	Point[] point = null;
-	RhombArea instance = new RhombArea();
-	double expResult = 0.0;
-	double result = instance.calc(point);
+    public void testSpecified() {
+	System.out.println("specified");
+	List<Tetragon> repository = null;
+	SpecificationByName instance = null;
+	List expResult = null;
+	List result = instance.specified(repository);
 	assertEquals(result, expResult);
 	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
