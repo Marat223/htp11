@@ -5,9 +5,9 @@
  */
 package net.mustaphin.project.read_data;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,16 +22,14 @@ import org.apache.log4j.Logger;
  */
 public class ReaderFile {
 
-    private final static Logger LOGGER = Logger.getLogger(ReaderFile.class);
-
     public List<String> readParameters(String fileDirectory) throws WrongInputFileException {
-	Path path = Paths.get(fileDirectory);
+	final Logger LOGGER = Logger.getLogger(ReaderFile.class);
 	List<String> coordinates = new ArrayList<>();
 	try {
-	    if (Files.exists(path)) {
+	    if (new File(fileDirectory).exists()) {
 		coordinates = Files.lines(Paths.get(fileDirectory)).collect(Collectors.toList());
 	    } else {
-		coordinates = Files.lines(Paths.get("./resources/coordinate.txt")).collect(Collectors.toList());
+		coordinates = Files.lines(Paths.get("resources/coordinate.txt")).collect(Collectors.toList());
 	    }
 	} catch (IOException ex) {
 	    WrongInputFileException exception = new WrongInputFileException("Input file is not exists", ex);
