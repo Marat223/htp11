@@ -21,7 +21,7 @@ public class TetragonCreate {
 
     public List<Tetragon> create(String path, Observer observer) throws WrongInputFileException {
 	List<Tetragon> allCreatedTetragons = new ArrayList<>();
-	for (Point[] realPoints : stringToPoints(Sequencer.sequenceInputData(path))) {
+	for (Point[] realPoints : stringToPoints(Sequencer.sequenceConvertData(path))) {
 	    Tetragon tetragon = new Tetragon(realPoints);
 	    allCreatedTetragons.add(tetragon);
 	    tetragon.addObserver(observer);
