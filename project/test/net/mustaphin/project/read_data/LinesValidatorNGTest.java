@@ -34,7 +34,7 @@ public class LinesValidatorNGTest {
 	System.out.println("validateDetached");
 	List<String[]> detached = null;
 	int amount = 0;
-	LinesValidator instance = new LinesValidator();
+	LineValidator instance = new LineValidator();
 	List expResult = null;
 	List result = instance.validateDetached(detached, amount);
 	assertEquals(result, expResult);

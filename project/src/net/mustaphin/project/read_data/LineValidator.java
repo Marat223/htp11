@@ -15,7 +15,7 @@ import net.mustaphin.project.constant.CoordinateRegular;
  *
  * @author marat
  */
-public class LinesValidator {
+public class LineValidator {
 
     public List<String[]> validateDetached(List<String[]> detached, int amount) {//amount 8 если четырёхугольник
 	List<String[]> validated = new ArrayList<>();
@@ -24,12 +24,16 @@ public class LinesValidator {
 	    if (pack.length != amount) {
 		continue;//TODO добавить запись события в лог
 	    }
+	    List<String> valid = new ArrayList<>();
 	    for (String single : pack) {
 		Matcher matcher = pattern.matcher(single);
-		if (matcher.find()) {
-		    validated.add(pack);
+		if (!matcher.find()) {
 		    break;
 		}
+		valid.add(single);
+	    }
+	    if (valid.size() == amount) {
+		validated.add(valid.toArray(new String[8]));
 	    }
 	}
 	return validated;

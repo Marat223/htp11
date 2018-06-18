@@ -7,7 +7,7 @@ package net.mustaphin.project.read_data.sequence;
 
 import java.util.List;
 import net.mustaphin.project.custom_excepoin.WrongInputFileException;
-import net.mustaphin.project.read_data.LinesValidator;
+import net.mustaphin.project.read_data.LineValidator;
 import net.mustaphin.project.read_data.ParserLine;
 import net.mustaphin.project.read_data.ReaderFile;
 
@@ -22,7 +22,7 @@ public class Sequencer {
 	List<String> raw = reader.readParameters(fileDirectory); //будет использован файл по-умолчанию
 	ParserLine parser = new ParserLine();
 	List<String[]> parsed = parser.parseLine(raw, " ");
-	LinesValidator validator = new LinesValidator();
+	LineValidator validator = new LineValidator();
 	List<String[]> valid = validator.validateDetached(parsed, 8);
 	return valid;
     }
