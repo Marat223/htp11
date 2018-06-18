@@ -12,5 +12,6 @@ package net.mustaphin.project.constant;
 public enum ShapeType {
     SQUARE,
     TRAPEZE,
-    RHOMB
+    RHOMB,
+    UNSIGNED
 }

@@ -13,6 +13,6 @@ import net.mustaphin.project.shape.Tetragon;
  */
 public interface Observer {
     
-    void handleEvent(Tetragon tetragon);
+    void handleEvent(Tetragon tetragon) ;
 
 }

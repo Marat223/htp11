@@ -5,6 +5,7 @@
  */
 package net.mustaphin.project.action.particular;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -27,7 +28,7 @@ public class TrapezeParticular extends Particular {
 	boolean result = false;
 	int type[][] = {{1, -1, -1, 1}, {0, -1, 1, 0}};
 	for (int i = 0; i < type.length; i++) {
-	    List<Integer> current = Arrays.asList(type[i][0], type[i][1], type[i][2], type[i][3]);
+	    List<Integer> current =  new ArrayList<>(Arrays.asList(type[i][0], type[i][1], type[i][2], type[i][3]));
 	    Iterator<Integer> corner = current.iterator();
 	    for (int angle : cornerType) {
 		checkSingleCorner(angle, corner);
@@ -40,7 +41,7 @@ public class TrapezeParticular extends Particular {
 	return result;
     }
 
-    private void checkSingleCorner(int angle, Iterator<Integer> corner) {
+    private void checkSingleCorner(int angle, final Iterator<Integer> corner) {
 	while (corner.hasNext()) {
 	    Integer next = corner.next();
 	    if (next == angle) {

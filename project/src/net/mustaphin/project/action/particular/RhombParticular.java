@@ -5,8 +5,8 @@
  */
 package net.mustaphin.project.action.particular;
 
-import net.mustaphin.project.parameter.PrepareParameter;
 import net.mustaphin.project.constant.ShapeType;
+import net.mustaphin.project.parameter.PrepareParameter;
 
 /**
  *
@@ -21,6 +21,7 @@ public class RhombParticular extends Particular {
 	double cos[] = prepare.getCos();
 	boolean cosCrossSame = cos[0] == cos[2] && cos[1] == cos[3];
 	boolean sidesSame = side[0] == side[1] && side[2] == side[3];
+	System.out.println(cosCrossSame + " <> " + sidesSame);
 	return cosCrossSame && sidesSame;
     }
 

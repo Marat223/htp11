@@ -37,7 +37,7 @@ public class PrepareParameter {
     }
 
     public boolean checkParticular(Particular particular) {
-	shapeType = particular.getType();
+	this.shapeType = particular.getType();
 	return particular.clarify(this);
     }
 
