@@ -75,7 +75,7 @@ public class Point {
 
     @Override
     public String toString() {
-	return "Podouble{" + "x=" + x + ", y=" + y + '}';
+	return "Point{" + "x=" + x + ", y=" + y + '}';
     }
 
 }

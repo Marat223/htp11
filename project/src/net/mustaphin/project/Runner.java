@@ -22,14 +22,12 @@ public class Runner {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws WrongInputFileException {
-	System.setProperty("log4j.configurationFile","./log4j2.xml");
+//	System.setProperty("log4j.configurationFile","./log4j2.xml");
 	Observer observer = new TetragonObserver();
 	TetragonCreate tetragonCreate = new TetragonCreate();
 	List<Tetragon> tetragons = tetragonCreate.create("", observer);
 	System.out.println(tetragons);
 
-//	Sequencer sequenser = new Sequencer();
-//	List<String[]> data = sequenser.sequenceConvertData("");
     }
 
 }

@@ -103,7 +103,7 @@ public class Tetragon {
 
     @Override
     public String toString() {
-	return "Tetragon{" + "point=" + point + ", observer=" + observer + ", name=" + name + '}';
+	return "Tetragon{" + "point[]=" + point[0] + ", " + point[1] + ", " + point[2] + ", " + point[3] + ", observer=" + observer + ", name=" + name + '}';
     }
 
 }
