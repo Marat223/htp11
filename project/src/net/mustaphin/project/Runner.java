@@ -30,7 +30,7 @@ public class Runner {
 	TetragonCreate tetragonCreate = new TetragonCreate();
 	List<Tetragon> tetragons = tetragonCreate.create("", observer);
 	TetragonRepository.getINSTANSE().addShape(tetragons);
-	SpecificationById byId = new SpecificationById(2);//
+	SpecificationById byId = new SpecificationById(1);
 	System.out.println(TetragonRepository.getINSTANSE().query(byId));
     }
 
