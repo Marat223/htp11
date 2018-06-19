@@ -23,7 +23,7 @@ public class TetragonCreate {
 	List<Tetragon> allCreatedTetragons = new ArrayList<>();
 	for (Point[] realPoints : stringToPoints(Sequencer.sequenceConvertData(path))) {
 	    Tetragon tetragon = new Tetragon(realPoints);
-	    
+	    tetragon.setId(IdGenerator.getInstance().getNextId());
 	    tetragon.addObserver(observer);
 	    allCreatedTetragons.add(tetragon);
 	}
