@@ -8,6 +8,8 @@ package net.mustaphin.project.read_data.sequence;
 import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.fail;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -25,13 +27,21 @@ public class SequencerNGTest {
     public static void setUpClass() throws Exception {
     }
 
+    @AfterClass
+    public static void tearDownClass() throws Exception {
+    }
+
     @BeforeMethod
     public void setUpMethod() throws Exception {
     }
 
+    @AfterMethod
+    public void tearDownMethod() throws Exception {
+    }
+
     @Test
-    public void testSequenceInputData() throws Exception {
-	System.out.println("sequenceInputData");
+    public void testSequenceConvertData() throws Exception {
+	System.out.println("sequenceConvertData");
 	String fileDirectory = "";
 	List expResult = null;
 	List result = Sequencer.sequenceConvertData(fileDirectory);

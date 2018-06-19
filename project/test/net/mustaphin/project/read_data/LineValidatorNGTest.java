@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.particular;
+package net.mustaphin.project.read_data;
 
-import net.mustaphin.project.parameter.PrepareParameter;
+import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.fail;
 import org.testng.annotations.AfterClass;
@@ -18,9 +18,9 @@ import org.testng.annotations.Test;
  *
  * @author marat
  */
-public class RhombParticularNGTest {
+public class LineValidatorNGTest {
     
-    public RhombParticularNGTest() {
+    public LineValidatorNGTest() {
     }
 
     @BeforeClass
@@ -40,12 +40,13 @@ public class RhombParticularNGTest {
     }
 
     @Test
-    public void testClarify() {
-	System.out.println("clarify");
-	PrepareParameter prepare = null;
-	RhombParticular instance = new RhombParticular();
-	boolean expResult = false;
-	boolean result = instance.clarify(prepare);
+    public void testValidateDetached() {
+	System.out.println("validateDetached");
+	List<String[]> detached = null;
+	int amount = 0;
+	LineValidator instance = new LineValidator();
+	List expResult = null;
+	List result = instance.validateDetached(detached, amount);
 	assertEquals(result, expResult);
 	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
