@@ -19,6 +19,7 @@ public class ParserLine {
 	for (String line : lines) {
 	    String[] detached = line.trim().split(delimeter);
 	    parsed.add(detached);
+	    System.out.print(detached[0] + "  " + detached[1] + "  " + detached[2] + "  " + detached[3] + "\n");
 	}
 	return parsed;
     }

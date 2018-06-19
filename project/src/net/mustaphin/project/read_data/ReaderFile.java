@@ -13,8 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import net.mustaphin.project.custom_excepoin.WrongInputFileException;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 
 /**
  *
@@ -23,7 +21,7 @@ import org.apache.log4j.Logger;
 public class ReaderFile {
 
     public List<String> readParameters(String fileDirectory) throws WrongInputFileException {
-	final Logger LOGGER = Logger.getLogger(ReaderFile.class);
+//	final Logger LOGGER = Logger.getLogger(ReaderFile.class);
 	List<String> coordinates = new ArrayList<>();
 	try {
 	    if (new File(fileDirectory).exists()) {
@@ -33,7 +31,7 @@ public class ReaderFile {
 	    }
 	} catch (IOException ex) {
 	    WrongInputFileException exception = new WrongInputFileException("Input file is not exists", ex);
-	    LOGGER.log(Level.ERROR, fileDirectory, ex);
+//	    LOGGER.log(Level.ERROR, fileDirectory, ex);
 	    throw exception;
 	}
 	return coordinates;

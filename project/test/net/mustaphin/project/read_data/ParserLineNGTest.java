@@ -7,7 +7,6 @@ package net.mustaphin.project.read_data;
 
 import java.util.List;
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.fail;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -19,7 +18,9 @@ import org.testng.annotations.Test;
  * @author marat
  */
 public class ParserLineNGTest {
-    
+
+    private List<String> parametr;
+
     public ParserLineNGTest() {
     }
 
@@ -33,6 +34,8 @@ public class ParserLineNGTest {
 
     @BeforeMethod
     public void setUpMethod() throws Exception {
+	ReaderFile readerFile = new ReaderFile();
+	parametr = readerFile.readParameters("");
     }
 
     @AfterMethod
@@ -42,13 +45,12 @@ public class ParserLineNGTest {
     @Test
     public void testParseLine() {
 	System.out.println("parseLine");
-	List<String> lines = null;
+	List<String> lines = parametr;
 	String delimeter = "";
 	ParserLine instance = new ParserLine();
 	List expResult = null;
 	List result = instance.parseLine(lines, delimeter);
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
-    
+
 }

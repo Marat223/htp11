@@ -10,8 +10,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import net.mustaphin.project.constant.CoordinateRegular;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 
 /**
  *
@@ -19,14 +17,14 @@ import org.apache.log4j.Logger;
  */
 public class LineValidator {
 
-    final Logger LOGGER = Logger.getLogger(LineValidator.class);
+//    final Logger LOGGER = Logger.getLogger(LineValidator.class);
 
     public List<String[]> validateDetached(List<String[]> detached, int amount) {//amount 8 если четырёхугольник
 	List<String[]> validated = new ArrayList<>();
 	Pattern pattern = Pattern.compile(CoordinateRegular.COORDINATE);// [\\d]+\\.[\\d]+
 	for (String[] pack : detached) {
 	    if (pack.length != amount) {
-		LOGGER.log(Level.WARN, "Line is too short");
+//		LOGGER.log(Level.WARN, "Line is too short");
 		continue;
 	    }
 	    List<String> valid = new ArrayList<>();
