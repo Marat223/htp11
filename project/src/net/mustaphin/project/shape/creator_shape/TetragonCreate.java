@@ -23,9 +23,9 @@ public class TetragonCreate {
 	List<Tetragon> allCreatedTetragons = new ArrayList<>();
 	for (Point[] realPoints : stringToPoints(Sequencer.sequenceConvertData(path))) {
 	    Tetragon tetragon = new Tetragon(realPoints);
-	    allCreatedTetragons.add(tetragon);
+	    
 	    tetragon.addObserver(observer);
-	    tetragon.notifyObserver();
+	    allCreatedTetragons.add(tetragon);
 	}
 	return allCreatedTetragons;
     }

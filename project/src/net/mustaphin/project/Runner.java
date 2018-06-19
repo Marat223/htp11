@@ -29,7 +29,7 @@ public class Runner {
 	TetragonCreate tetragonCreate = new TetragonCreate();
 	List<Tetragon> tetragons = tetragonCreate.create("", observer);
 	TetragonRepository.getINSTANSE().addShape(tetragons);
-
+	
     }
 
 }
