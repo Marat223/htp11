@@ -30,9 +30,8 @@ public class ReaderFile {
 		coordinates = Files.lines(Paths.get("resources/coordinate.txt")).collect(Collectors.toList());
 	    }
 	} catch (IOException ex) {
-	    WrongInputFileException exception = new WrongInputFileException("Input file is not exists", ex);
 //	    LOGGER.log(Level.ERROR, fileDirectory, ex);
-	    throw exception;
+	    throw new WrongInputFileException("Input file is not exists", ex);
 	}
 	return coordinates;
     }
