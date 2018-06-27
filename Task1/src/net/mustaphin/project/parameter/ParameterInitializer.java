@@ -12,7 +12,7 @@ import net.mustaphin.project.action.area.RhombArea;
 import net.mustaphin.project.action.area.SquareArea;
 import net.mustaphin.project.action.area.TrapezeArea;
 import net.mustaphin.project.action.area.Unsigned;
-import net.mustaphin.project.action.natural_tetragon.NaturalTetragon;
+import net.mustaphin.project.action.naturaltetragon.NaturalTetragon;
 import net.mustaphin.project.action.particular.ConvexParticular;
 import net.mustaphin.project.action.particular.Particular;
 import net.mustaphin.project.action.particular.RhombParticular;
@@ -31,11 +31,11 @@ public class ParameterInitializer {
     public GeometricalParameter operate(Point point[]) {
 	GeometricalParameter parameter = new GeometricalParameter();
 	PrepareParameter prepare = new PrepareParameter(point);
-	if (!checkNatural(point, parameter) | !checkConvex(parameter, prepare)) {
-	    parameter.setType(ShapeType.UNSIGNED);
-	} else {
+	if (checkNatural(point, parameter) & checkConvex(parameter, prepare)) {
 	    checkType(parameter, prepare);
 	    findArea(parameter, prepare);
+	} else {
+	    parameter.setType(ShapeType.UNSIGNED);
 	}
 	findPerimeter(parameter, prepare);
 	return parameter;

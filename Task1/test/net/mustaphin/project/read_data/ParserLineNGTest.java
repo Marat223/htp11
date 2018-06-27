@@ -5,6 +5,8 @@
  */
 package net.mustaphin.project.read_data;
 
+import net.mustaphin.project.readdata.ParserLine;
+import net.mustaphin.project.readdata.ReaderFile;
 import java.util.List;
 import static org.testng.Assert.assertEquals;
 import org.testng.annotations.AfterClass;

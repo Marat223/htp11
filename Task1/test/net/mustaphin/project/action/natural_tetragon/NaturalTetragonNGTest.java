@@ -5,6 +5,7 @@
  */
 package net.mustaphin.project.action.natural_tetragon;
 
+import net.mustaphin.project.action.naturaltetragon.NaturalTetragon;
 import net.mustaphin.project.shape.Point;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.fail;

@@ -8,7 +8,7 @@ package net.mustaphin.project.repository;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import net.mustaphin.project.custom_excepoin.RepositoryException;
+import net.mustaphin.project.customexceptoin.RepositoryException;
 import net.mustaphin.project.shape.Tetragon;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;

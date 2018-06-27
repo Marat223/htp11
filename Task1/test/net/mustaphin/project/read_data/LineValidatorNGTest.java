@@ -5,6 +5,7 @@
  */
 package net.mustaphin.project.read_data;
 
+import net.mustaphin.project.readdata.LineValidator;
 import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.fail;

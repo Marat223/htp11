@@ -5,6 +5,7 @@
  */
 package net.mustaphin.project.read_data.sequence;
 
+import net.mustaphin.project.readdata.sequence.Sequencer;
 import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.fail;

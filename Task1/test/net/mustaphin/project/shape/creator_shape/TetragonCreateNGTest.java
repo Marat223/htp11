@@ -5,6 +5,7 @@
  */
 package net.mustaphin.project.shape.creator_shape;
 
+import net.mustaphin.project.shape.creatorshape.TetragonCreate;
 import java.util.List;
 import net.mustaphin.project.observer.Observer;
 import static org.testng.Assert.assertEquals;

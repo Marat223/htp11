@@ -6,12 +6,12 @@
 package net.mustaphin.project;
 
 import java.util.List;
-import net.mustaphin.project.custom_excepoin.RepositoryException;
-import net.mustaphin.project.custom_excepoin.WrongInputFileException;
+import net.mustaphin.project.customexceptoin.RepositoryException;
+import net.mustaphin.project.customexceptoin.WrongInputFileException;
 import net.mustaphin.project.observer.Observer;
 import net.mustaphin.project.observer.TetragonObserver;
 import net.mustaphin.project.shape.Tetragon;
-import net.mustaphin.project.shape.creator_shape.TetragonCreate;
+import net.mustaphin.project.shape.creatorshape.TetragonCreate;
 
 /**
  *

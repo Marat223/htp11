@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.shape.creator_shape;
+package net.mustaphin.project.shape.creatorshape;
 
 /**
  *
