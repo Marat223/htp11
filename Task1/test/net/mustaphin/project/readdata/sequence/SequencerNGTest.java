@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.read_data.sequence;
+package net.mustaphin.project.readdata.sequence;
 
 import net.mustaphin.project.readdata.sequence.Sequencer;
 import java.util.List;

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.read_data;
+package net.mustaphin.project.action.naturaltetragon;
 
-import net.mustaphin.project.readdata.LineValidator;
-import java.util.List;
+import net.mustaphin.project.action.naturaltetragon.NaturalTetragon;
+import net.mustaphin.project.shape.Point;
 import static org.testng.Assert.assertEquals;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -18,9 +18,9 @@ import org.testng.annotations.Test;
  *
  * @author marat
  */
-public class LineValidatorNGTest {
+public class NaturalTetragonNGTest {
     
-    public LineValidatorNGTest() {
+    public NaturalTetragonNGTest() {
     }
 
     @BeforeClass
@@ -40,13 +40,12 @@ public class LineValidatorNGTest {
     }
 
     @Test
-    public void testValidateDetached() {
-	System.out.println("validateDetached");
-	List<String[]> detached = null;
-	int amount = 0;
-	LineValidator instance = new LineValidator();
-	List expResult = null;
-	List result = instance.validateDetached(detached, amount);
+    public void testCheckNatural() {
+	System.out.println("checkNatural");
+	Point[] point = null;
+	NaturalTetragon instance = new NaturalTetragon();
+	boolean expResult = false;
+	boolean result = instance.checkNatural(point);
 	assertEquals(result, expResult);
     }
     

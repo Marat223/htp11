@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.read_data;
+package net.mustaphin.project.readdata;
 
-import net.mustaphin.project.readdata.ParserLine;
-import net.mustaphin.project.readdata.ReaderFile;
+import net.mustaphin.project.readdata.LineValidator;
 import java.util.List;
 import static org.testng.Assert.assertEquals;
 import org.testng.annotations.AfterClass;
@@ -19,11 +18,9 @@ import org.testng.annotations.Test;
  *
  * @author marat
  */
-public class ParserLineNGTest {
-
-    private List<String> parametr;
-
-    public ParserLineNGTest() {
+public class LineValidatorNGTest {
+    
+    public LineValidatorNGTest() {
     }
 
     @BeforeClass
@@ -36,8 +33,6 @@ public class ParserLineNGTest {
 
     @BeforeMethod
     public void setUpMethod() throws Exception {
-	ReaderFile readerFile = new ReaderFile();
-	parametr = readerFile.readParameters("");
     }
 
     @AfterMethod
@@ -45,14 +40,14 @@ public class ParserLineNGTest {
     }
 
     @Test
-    public void testParseLine() {
-	System.out.println("parseLine");
-	List<String> lines = parametr;
-	String delimeter = "";
-	ParserLine instance = new ParserLine();
+    public void testValidateDetached() {
+	System.out.println("validateDetached");
+	List<String[]> detached = null;
+	int amount = 0;
+	LineValidator instance = new LineValidator();
 	List expResult = null;
-	List result = instance.parseLine(lines, delimeter);
+	List result = instance.validateDetached(detached, amount);
 	assertEquals(result, expResult);
     }
-
+    
 }

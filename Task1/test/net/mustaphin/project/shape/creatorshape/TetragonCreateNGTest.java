@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.mustaphin.project.action.natural_tetragon;
+package net.mustaphin.project.shape.creatorshape;
 
-import net.mustaphin.project.action.naturaltetragon.NaturalTetragon;
-import net.mustaphin.project.shape.Point;
+import net.mustaphin.project.shape.creatorshape.TetragonCreate;
+import java.util.List;
+import net.mustaphin.project.observer.Observer;
 import static org.testng.Assert.assertEquals;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -18,9 +19,9 @@ import org.testng.annotations.Test;
  *
  * @author marat
  */
-public class NaturalTetragonNGTest {
-    
-    public NaturalTetragonNGTest() {
+public class TetragonCreateNGTest {
+
+    public TetragonCreateNGTest() {
     }
 
     @BeforeClass
@@ -40,13 +41,24 @@ public class NaturalTetragonNGTest {
     }
 
     @Test
-    public void testCheckNatural() {
-	System.out.println("checkNatural");
-	Point[] point = null;
-	NaturalTetragon instance = new NaturalTetragon();
-	boolean expResult = false;
-	boolean result = instance.checkNatural(point);
+    public void testCreate() throws Exception {
+	System.out.println("create");
+	String path = "";
+	Observer observer = null;
+	TetragonCreate instance = new TetragonCreate();
+	List expResult = null;
+	List result = instance.create(path, observer);
 	assertEquals(result, expResult);
     }
-    
+
+    @Test
+    public void testStringToPoints() {
+	System.out.println("stringToPoints");
+	List<String[]> stringCoordinate = null;
+	TetragonCreate instance = new TetragonCreate();
+	List expResult = null;
+	List result = instance.stringToPoints(stringCoordinate);
+	assertEquals(result, expResult);
+    }
+
 }
