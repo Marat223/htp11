@@ -20,7 +20,8 @@ import org.testng.annotations.Test;
  */
 public class ParserLineNGTest {
 
-    private List<String> parametr;
+    private List<String[]> expResult = new ArrayList<>();
+    private List<String[]> result;
 
     public ParserLineNGTest() {
     }
@@ -36,20 +37,9 @@ public class ParserLineNGTest {
     @BeforeMethod
     public void setUpMethod() throws Exception {
 	ReaderFile readerFile = new ReaderFile();
-	parametr = readerFile.readParameters("");
-    }
-
-    @AfterMethod
-    public void tearDownMethod() throws Exception {
-    }
-
-    @Test
-    public void testParseLine() {
-	System.out.println("parseLine");
-	List<String> lines = parametr;
-	String delimeter = " ";
+	List<String> lines = readerFile.readParameters("");
 	ParserLine instance = new ParserLine();
-	List<String[]> expResult = new ArrayList<>();
+	result = instance.parseLine(lines, " ");
 	String arr0[] = {"0.0", "0.0", "1.0", "0.0"};
 	String arr1[] = {"2.5", "0.0", "5.0", "5.0"};
 	String arr2[] = {"0.0", "0.0", "0.0", "10.0"};
@@ -60,7 +50,15 @@ public class ParserLineNGTest {
 	expResult.add(arr2);
 	expResult.add(arr3);
 	expResult.add(arr4);
-	List result = instance.parseLine(lines, delimeter);
+    }
+
+    @AfterMethod
+    public void tearDownMethod() throws Exception {
+    }
+
+    @Test
+    public void testParseLine() {
+	System.out.println("parseLine");
 	assertEquals(result, expResult);
     }
 

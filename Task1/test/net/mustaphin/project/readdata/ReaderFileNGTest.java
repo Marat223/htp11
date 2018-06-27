@@ -5,7 +5,6 @@
  */
 package net.mustaphin.project.readdata;
 
-import net.mustaphin.project.readdata.ReaderFile;
 import java.util.Arrays;
 import java.util.List;
 import static org.testng.Assert.assertEquals;
@@ -24,8 +23,6 @@ public class ReaderFileNGTest {
 	ReaderFile instance = new ReaderFile();
 	List expResult = Arrays.asList("0.0 0.0 1.0 0.0 1.1 1.1 0.0 1.0", "2.5 0.0 5.0 5.0 2.5 5.0 0.0 2.5", "0.0 0.0 0.0 10.0 7.0 8.0 2.0 8.0", "1.0 1.0 z.0 2.0 3.0 3.0 4.0 4.0", "1.0 1.0 2.0 2.0 3.0 3.0 4.0 -4.0");
 	List result = instance.readParameters(fileDirectory);
-	System.out.println(expResult);
-	System.out.println(result);
 	assertEquals(result, expResult);
     }
 
