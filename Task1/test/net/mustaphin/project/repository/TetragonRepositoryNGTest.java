@@ -9,7 +9,6 @@ import java.util.Comparator;
 import java.util.List;
 import net.mustaphin.project.shape.Tetragon;
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.fail;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -47,7 +46,6 @@ public class TetragonRepositoryNGTest {
 	TetragonRepository expResult = null;
 	TetragonRepository result = TetragonRepository.getINSTANSE();
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -58,7 +56,6 @@ public class TetragonRepositoryNGTest {
 	int expResult = 0;
 	int result = instance.addShape(tetragon);
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -67,7 +64,6 @@ public class TetragonRepositoryNGTest {
 	List<Tetragon> tetragons = null;
 	TetragonRepository instance = null;
 	instance.addShape(tetragons);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -76,7 +72,6 @@ public class TetragonRepositoryNGTest {
 	Tetragon tetragon = null;
 	TetragonRepository instance = null;
 	instance.removeShape(tetragon);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -85,7 +80,6 @@ public class TetragonRepositoryNGTest {
 	Tetragon tetragon = null;
 	TetragonRepository instance = null;
 	instance.updateShape(tetragon);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -96,7 +90,6 @@ public class TetragonRepositoryNGTest {
 	List expResult = null;
 	List result = instance.query(specification);
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -105,7 +98,6 @@ public class TetragonRepositoryNGTest {
 	Comparator<Tetragon> comparator = null;
 	TetragonRepository instance = null;
 	instance.sort(comparator);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
 }

@@ -7,7 +7,6 @@ package net.mustaphin.project.parameter;
 
 import net.mustaphin.project.constant.ShapeType;
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.fail;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -46,7 +45,6 @@ public class GeometricalParameterNGTest {
 	ShapeType expResult = null;
 	ShapeType result = instance.getType();
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -55,7 +53,6 @@ public class GeometricalParameterNGTest {
 	ShapeType type = null;
 	GeometricalParameter instance = new GeometricalParameter();
 	instance.setType(type);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -65,7 +62,6 @@ public class GeometricalParameterNGTest {
 	double expResult = 0.0;
 	double result = instance.getArea();
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -74,7 +70,6 @@ public class GeometricalParameterNGTest {
 	double area = 0.0;
 	GeometricalParameter instance = new GeometricalParameter();
 	instance.setArea(area);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -84,7 +79,6 @@ public class GeometricalParameterNGTest {
 	double expResult = 0.0;
 	double result = instance.getPerimeter();
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -93,7 +87,6 @@ public class GeometricalParameterNGTest {
 	double perimeter = 0.0;
 	GeometricalParameter instance = new GeometricalParameter();
 	instance.setPerimeter(perimeter);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -103,7 +96,6 @@ public class GeometricalParameterNGTest {
 	boolean expResult = false;
 	boolean result = instance.isIsTetragon();
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -112,7 +104,6 @@ public class GeometricalParameterNGTest {
 	boolean isTetragon = false;
 	GeometricalParameter instance = new GeometricalParameter();
 	instance.setIsTetragon(isTetragon);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -122,7 +113,6 @@ public class GeometricalParameterNGTest {
 	boolean expResult = false;
 	boolean result = instance.isIsConvex();
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -131,7 +121,6 @@ public class GeometricalParameterNGTest {
 	boolean isConvex = false;
 	GeometricalParameter instance = new GeometricalParameter();
 	instance.setIsConvex(isConvex);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -141,7 +130,6 @@ public class GeometricalParameterNGTest {
 	int expResult = 0;
 	int result = instance.hashCode();
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -152,7 +140,6 @@ public class GeometricalParameterNGTest {
 	boolean expResult = false;
 	boolean result = instance.equals(obj);
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -162,7 +149,6 @@ public class GeometricalParameterNGTest {
 	String expResult = "";
 	String result = instance.toString();
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
 }

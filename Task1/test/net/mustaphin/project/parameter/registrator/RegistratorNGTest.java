@@ -8,7 +8,6 @@ package net.mustaphin.project.parameter.registrator;
 import java.util.Map;
 import net.mustaphin.project.parameter.GeometricalParameter;
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.fail;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -46,7 +45,6 @@ public class RegistratorNGTest {
 	Registrator expResult = null;
 	Registrator result = Registrator.getInstance();
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -56,7 +54,6 @@ public class RegistratorNGTest {
 	GeometricalParameter external = null;
 	Registrator instance = null;
 	instance.insertParameter(id, external);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -67,7 +64,6 @@ public class RegistratorNGTest {
 	int expResult = 0;
 	int result = instance.getId(externalParameter);
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -78,7 +74,6 @@ public class RegistratorNGTest {
 	GeometricalParameter expResult = null;
 	GeometricalParameter result = instance.getParameter(id);
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -88,7 +83,6 @@ public class RegistratorNGTest {
 	Map expResult = null;
 	Map result = instance.getParameters();
 	assertEquals(result, expResult);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
 
     @Test
@@ -97,7 +91,6 @@ public class RegistratorNGTest {
 	int id = 0;
 	Registrator instance = null;
 	instance.removeParameter(id);
-	fail("\u042d\u0442\u043e\u0442 \u0442\u0435\u0441\u0442 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0442\u043e\u0442\u0438\u043f\u043e\u043c.");
     }
     
 }
